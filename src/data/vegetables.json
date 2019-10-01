@@ -1,0 +1,88 @@
+[
+  {
+    "name": "Salat",
+    "image": "/path/to/image",
+    "items": [
+      {
+        "name": "Bataviasalat",
+        "image": "/path/to/image"
+      },
+      {
+        "name": "Eichblattsalat",
+        "image": "/path/to/image"
+      },
+      {
+        "name": "Eisbergsalat",
+        "image": "/path/to/image"
+      },
+      {
+        "name": "Endiviensalat",
+        "image": "/path/to/image"
+      },
+      {
+        "name": "Feldsalat",
+        "image": "/path/to/image"
+      },
+      {
+        "name": "Kopfsalat",
+        "image": "/path/to/image"
+      },
+      {
+        "name": "Lollo Bionda",
+        "image": "/path/to/image"
+      },
+      {
+        "name": "Lollo Rosso",
+        "image": "/path/to/image"
+      }
+    ]
+  },
+  {
+    "name": "Blattgemüse",
+    "image": "path/to/image",
+    "items": [
+      {
+        "name": "Mangold",
+        "image": ""
+      },
+      {
+        "name": "Spinat",
+        "image": ""
+      },
+      {
+        "name": "Chinakohl",
+        "image": ""
+      },
+      {
+        "name": "Grünkohl",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "name": "Fruchtgemüse",
+    "image": "path/to/image",
+    "items": [
+      {
+        "name": "Tomate",
+        "image": ""
+      },
+      {
+        "name": "Mini-Tomate",
+        "image": ""
+      },
+      {
+        "name": "Zucchinil",
+        "image": ""
+      },
+      {
+        "name": "Paprika",
+        "image": ""
+      },
+      {
+        "name": "Paprika",
+        "image": ""
+      }
+    ]
+  }
+]
