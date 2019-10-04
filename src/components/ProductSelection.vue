@@ -1,9 +1,8 @@
 <template>
-  <div class="configure-delivery-container modal-overlay"
+  <div class="product-selection-container modal-overlay"
               @click="$emit('close')">
     <div class="modal-content">
-
-      <div v-if="showItemConfiguration == false" class="grid-container">
+      <div class="grid-container">
         <div class="item" v-for="(item, index) in displayedItems" :key=item.name>
           <div class="grid-item" @click.stop="select(item)">
             {{ item.name }}
@@ -11,20 +10,8 @@
         </div>
        </div>
 
-      <div class="item-configuration" v-if="showItemConfiguration">
-        <div class="selection-header"> {{ selectedItem.name }} </div>
-        <div class="share-amount" v-for="shareType in shareTypes">
-          {{ shareType.name }} 
-        </div>
-          Gesamtbedarf:
-      </div>
-
       <button v-if="lastSelection" class="button back-button" @click.stop="back()">
         <i class="fa fa-chevron-down" style="margin-left:8px;">zurück</i>
-      </button>
-
-      <button v-if="showItemConfiguration" class="button save-button" @click.stop="save()">
-        <i class="fa fa-chevron-down" style="margin-left:8px;">speichern</i>
       </button>
 
     </div>
@@ -35,14 +22,13 @@
 import items from '@/data/vegetables.json'
 
 export default {
-  name: 'ConfigureDelivery',
+  name: 'ProductSelection',
   data() {
     return {
       items: items,
       displayedItems: items,
       lastSelection: null,
       selecteItem: {},
-      showItemConfiguration: false
     }
   },
   methods: {
@@ -54,21 +40,15 @@ export default {
       }
       else
       {
-        this.showItemConfiguration = true
+        this.$emit('selected', item)
+        this.selectedItem = {}
       }
       this.selectedItem = item
     },
     back(){
-      if (this.showItemConfiguration == true)
-      {
-        this.showItemConfiguration = false
-      }
-      else
-      {
-        this.displayedItems = this.lastSelection
-        this.lastSelection = null
-        this.selecteItem = {}
-      }
+      this.displayedItems = this.lastSelection
+      this.lastSelection = null
+      this.selecteItem = {}
     },
     save(){
       this.back()

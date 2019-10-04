@@ -5,35 +5,49 @@
     "items": [
       {
         "name": "Bataviasalat",
-        "image": "/path/to/image"
+        "image": "/path/to/image",
+        "unit": "p"
       },
       {
         "name": "Eichblattsalat",
-        "image": "/path/to/image"
+        "image": "/path/to/image",
+        "unit": "p"
       },
       {
+        "name": "Salatkopf (Mischung)",
+        "image": "/path/to/image",
+        "unit": "p"
+      },
+ 
+      {
         "name": "Eisbergsalat",
-        "image": "/path/to/image"
+        "image": "/path/to/image",
+        "unit": "p"
       },
       {
         "name": "Endiviensalat",
-        "image": "/path/to/image"
+        "image": "/path/to/image",
+        "unit": "p"
       },
       {
         "name": "Feldsalat",
-        "image": "/path/to/image"
+        "image": "/path/to/image",
+        "unit": "p"
       },
       {
         "name": "Kopfsalat",
-        "image": "/path/to/image"
+        "image": "/path/to/image",
+        "unit": "p"
       },
       {
         "name": "Lollo Bionda",
-        "image": "/path/to/image"
+        "image": "/path/to/image",
+        "unit": "p"
       },
       {
         "name": "Lollo Rosso",
-        "image": "/path/to/image"
+        "image": "/path/to/image",
+        "unit": "p"
       }
     ]
   },
@@ -43,19 +57,23 @@
     "items": [
       {
         "name": "Mangold",
-        "image": ""
+        "image": "",
+        "unit": "g"
       },
       {
         "name": "Spinat",
-        "image": ""
+        "image": "",
+        "unit": "g"
       },
       {
         "name": "Chinakohl",
-        "image": ""
+        "image": "",
+        "unit": "g"
       },
       {
         "name": "Grünkohl",
-        "image": ""
+        "image": "",
+        "unit": "g"
       }
     ]
   },
@@ -65,23 +83,33 @@
     "items": [
       {
         "name": "Tomate",
-        "image": ""
+        "image": "",
+        "unit": "g"
       },
       {
         "name": "Mini-Tomate",
-        "image": ""
+        "image": "",
+        "unit": "g"
       },
       {
         "name": "Zucchinil",
-        "image": ""
+        "image": "",
+        "unit": "g"
       },
       {
         "name": "Paprika",
-        "image": ""
+        "image": "",
+        "unit": "g"
       },
       {
         "name": "Paprika",
-        "image": ""
+        "image": "",
+        "unit": "g"
+      },
+      {
+        "name": "Gurke",
+        "image": "",
+        "unit": "p"
       }
     ]
   }

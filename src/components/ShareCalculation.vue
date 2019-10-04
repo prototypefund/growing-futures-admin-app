@@ -20,14 +20,14 @@
 					</tbody>
 				</table>
 			</div>
-
-      <button class="add-button" @click="configureDelivery = true">
-        <i class="fa fa-chevron-down" style="margin-left:8px;"></i>
-      </button>
-
-      <configure-delivery v-if="configureDelivery"
-        @close="configureDelivery = false" :shareTypes=shareTypes />
     </div>
+
+    <button class="add-button" @click="configureDelivery = true">
+      <i class="fa fa-chevron-down" style="margin-left:8px;"></i>
+    </button>
+
+    <configure-delivery v-if="configureDelivery"
+      @close="configureDelivery = false" :shareTypes=shareTypes />
   </div>
 </template>
 
@@ -41,26 +41,13 @@ export default {
 	data() {
 		return {
       configureDelivery: false,
-			products: [{
-									name: "Tomate",
-									amount: "500",
-									unit: "g"
-								},
-								{
-									name: "Gurke",
-									amount: "2",
-									unit: "p"
-								},
-								{
-									name: "Grünkohl",
-									amount: "800",
-									unit: "g"
-								}]
-		}
+			products: [],
+			shareProducts: []
+      }
 	},
   props: {
     shareType: Object,
-    shareTypes: Object
+    shareTypes: Array
   }
 }
 </script>
