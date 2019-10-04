@@ -14,50 +14,56 @@
           </button>
         </div>
 
-        <product-list :products="products"/>
+        <product-list v-if="Array.isArray(products) && products.length" 
+          :products="products"/>
           
         <product-selection v-if="productSelection"
           @close="productSelection=false"
           @selected="addToSelection"/>
 
         <div class="harvest-header">Ausgabeplan</div>
-        <div class="share-type" v-for="shareType in shareTypes" :key="shareType.type">
-            <share-calculation :shareType=shareType :shareTypes=shareTypes />
+          <div class="share-type" v-for="shareType in shareTypes" :key="shareType.type">
+            <div class="share" v-if="Array.isArray(products) && products.length">
+              {{ shareType.name }}
+              <share-list :products="shareSplit[shareType.name]" :type=shareType.name
+                @addPlanned="updateShare"/>
+            </div>
           </div>
         </div>
-
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
-import ShareCalculation from '@/components/ShareCalculation.vue'
 import ProductList from '@/components/ProductList.vue'
+import ShareList from '@/components/ShareList.vue'
 import ProductSelection from '@/components/ProductSelection.vue'
 
 export default {
   name: 'Delivery',
   components: {
-    ShareCalculation,
     ProductList,
+    ShareList,
     ProductSelection,
   },
   data() {
     return {
       days: ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"],
       shareTypes: [{
-                    type: "small",
-                    name: "Kleiner Anteil"
+                    type: "big",
+                    name: "Großer Anteil",
+                    factor: 1,
+                    shares: 46
                     },
                     {
-                    type: "big",
-                    name: "Großer Anteil"
+                    type: "small",
+                    name: "Kleiner Anteil",
+                    factor: 0.5 ,
+                    shares: 38
                     }],
       nextDelivery: new Date("2019-10-04"),
-      upcomingDeliveries: [new Date("2019-10-04"), new Date("2019-10-11"), new Date("2019-10-18"), new Date("2019-10-25")],
-      previousDeliveries: [new Date("2019-09-27"), new Date("2019-09-20"), new Date("2019-09-13"), new Date("2019-10-06")],
+
       products: [],
+      shareSplit: {},
       productSelection: false
     }
   },
@@ -67,16 +73,40 @@ export default {
         .filter(i => i.name == item.name)
         .length
 
-      if (!alreadyInList)
-      {
+      if (!alreadyInList) {
         this.products.push(item)
+
+        this.shareTypes.forEach( elt => {
+          if (!this.shareSplit[elt.name]) {
+            this.$set(this.shareSplit, elt.name, [])
+          }
+          let splitItem = JSON.parse(JSON.stringify(item));
+          this.shareSplit[elt.name].push(splitItem)})
       }
       this.closeProductSelection()
     },
     closeProductSelection(){
       this.productSelection = false
+    },
+    updateShare(o){
+      console.log("updating")
+      let split = this.shareSplit[o.type].find(item => item.name == o.product)
+      this.$set(split, 'planned', o.planned)
+      this.productSummary()
+    },
+    productSummary() {
+      this.products.forEach(prod => {
+        let result = []
+        this.shareTypes.forEach(type => {
+          let found = this.shareSplit[type.name].find(splitElement => splitElement.name == prod.name)
+          let amount = found.planned * type.shares
+          result.push(amount)
+        })
+        let veggi = this.products.find(item => item.name == prod.name)
+        this.$set(veggi, 'planned', result.reduce((a, b) => a + b, 0))
+      })
     }
-  },
+  }
 }
 </script>
 
@@ -105,6 +135,10 @@ export default {
 .share-header{
   font-size: 20px;
   font-weight: bold;
+}
+
+.share {
+  padding-top: 20px;
 }
 
 .share-type{

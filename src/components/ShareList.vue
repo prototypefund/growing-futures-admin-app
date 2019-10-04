@@ -1,11 +1,11 @@
 <template>
-  <div class="product-list-container">
-    <div class="table-container">
+  <div class="share-list-container">
+			<div class="table-container">
 			<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
 					<thead>
 						<tr>
 							<th>Produkt</th>
-							<th>Geerntet</th>
+							<th>Berechnet</th>
 							<th>Geplant</th>
 							<th>Einheit</th>
 						</tr>
@@ -13,10 +13,12 @@
 					<tbody>
 						<tr v-for="(p, index) in products" :key="p.name+index">
 							<td>{{p.name}}</td>
+							<td>{{p.amount}}</td>
               <td>
-                <b-input v-model="p.harvested"></b-input>
+                <b-input v-model="p.planned"
+                         @input="$emit('addPlanned', {'product': p.name,
+                                 'planned': p.planned, 'type': type })"></b-input>
               </td>
-							<td>{{p.planned}}</td>
 							<td>{{displayUnit(p.unit)}}</td>
 						</tr>
 					</tbody>
@@ -28,9 +30,10 @@
 
 <script>
 export default {
-  name: 'ProductList',
+  name: 'ShareList',
   props: {
     products: Array,
+    type: String
   },
   methods: {
     displayUnit(unit){
