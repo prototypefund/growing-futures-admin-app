@@ -27,7 +27,7 @@
           <div class="share-type" v-for="shareType in shareTypes" :key="shareType.type">
             <div class="share" v-if="Array.isArray(products) && products.length">
               {{ shareType.name }} ({{ shareType.shares }} Mal)
-              <share-list :products="shareSplit[shareType.name]" :type=shareType.name
+              <share-list :products="products" :type=shareType.type
                 @selected="productConfiguration"/>
             </div>
           </div>
@@ -37,7 +37,7 @@
           :shareTypes="shareTypes"
           :product="selectedProduct"
           @close="displayProductConfiguration = false"
-          @done="displayProductConfiguration = false"/>
+          @done="handleDoneProductConfiguration"/>
 
   </div>
 </template>
@@ -87,6 +87,9 @@ export default {
         .length
 
       if (!alreadyInList) {
+        item.planned = {}
+        this.shareTypes.forEach(type => item.planned[type] = 0)
+        item.harvested = 0
         this.products.push(item)
 
         this.shareTypes.forEach( elt => {
@@ -105,28 +108,11 @@ export default {
       this.displayProductConfiguration = true
       this.selectedProduct = this.products.find(p => p.name == product)
     },
-    updateShare(o){
-      console.log("updating")
-      let split = this.shareSplit[o.type].find(item => item.name == o.product)
-      this.$set(split, 'planned', o.planned)
-      this.upateProductSummary()
-    },
-    upateProductSummary() {
-      this.products.forEach(prod => {
-        let result = []
-        this.shareTypes.forEach(type => {
-          let found = this.shareSplit[type.name].find(splitElement => splitElement.name == prod.name)
-          let amount = 0
-          if (found.planned) {
-            amount = found.planned * type.shares
-          }
-          result.push(amount)
-        })
-        let veggi = this.products.find(item => item.name == prod.name)
-        let sum = result.reduce((a,b) => a + b, 0)
-        console.log(sum)
-        this.$set(veggi, 'planned', sum)
-      })
+    handleDoneProductConfiguration(r) {
+      this.displayProductConfiguration = false
+      let idx = this.products.findIndex(p => p.name == r.name)
+      this.products.splice(idx, 1)
+      this.products.push(r)
     }
   }
 }

@@ -26,8 +26,11 @@
               :class="{'inactive-header': !harvestUsed}">
               {{ harvested }} {{ displayUnit }}
             </button>
-            <input v-else type="number" ref="fubar" @keyup.enter="toggleHarvestInput" class="button header-button"
-                                                                               v-model="harvested"/>
+            <input v-else type="number"
+                          ref="harvestinput"
+                          @keyup.enter="inputHarvestInfo = !inputHarvestInfo" 
+                          class="button header-button"
+                          v-model="harvested"/>
           </div>
 
           <div class="grid-item">
@@ -74,8 +77,8 @@ export default {
   data() {
     return {
       inputHarvestInfo: false,
-      harvested: 0,
-      planned: {},
+      harvested: this.product.harvested,
+      planned: this.product.planned,
       range: range,
     }
   },
@@ -129,10 +132,8 @@ export default {
       return this.shareTypes.map(share => buildShareTotal(share, shareTotal))
     },
     createResponse(){
-
-      let response = {}
-      let product = JSON.parse(JSON.stringify(this.product));
-      response.product = product
+      let response = JSON.parse(JSON.stringify(this.product));
+      this.planned.total = this.total
       response.harvested = this.harvested
       response.planned = this.planned
       response.buffer = this.buffer
@@ -143,21 +144,20 @@ export default {
       return response
     },
     focusInput() {
-      this.$refs.fubar.focus();
+      this.$refs.harvestinput.focus();
     },
     toggleHarvestInput(e) {
       this.inputHarvestInfo = !this.inputHarvestInfo 
       console.dir(this.$refs)
       this.$nextTick(() => {
-          this.$refs.fubar.select()
-          this.$refs.fubar.focus()
+          this.$refs.harvestinput.select()
+          this.$refs.harvestinput.focus()
         })
     },
     done() {
       console.dir(this.inputHarvestInfo)
       if (this.inputHarvestInfo) {
-        console.dir('here')
-        this.toggleHarvestInput(null)
+        this.inputHarvestInfo = !this.inputHarvestInfo 
       } else { 
         this.$emit('done', this.createResponse())
       }
@@ -173,6 +173,12 @@ export default {
     total: function() {
       let amount = 0
       this.shareTypes.forEach(t => {
+        console.log(t.type)
+        if (!this.planned)
+        {
+          this.planned = {}
+        }
+        console.log(this.planned)
         let planPerShare = this.planned[t.type]
         if (planPerShare)
         {

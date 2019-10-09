@@ -13,10 +13,18 @@
 					<tbody>
 						<tr v-for="(p, index) in products" :key="p.name+index">
 							<td>{{p.name}}</td>
-              <td>
-                <b-input v-model="p.harvested"></b-input>
+              <td @click="toggleHarvestInput">
+                <span v-if="!harvestInput" v-model="p.harvested">
+                  {{ p.harvested }}
+                </span>
+                <input v-else type="number"
+                              ref="harvest"
+                              @keyup.enter="harvestinput = !harvestinput"
+                              @click.stop
+                              class="harvest-input"
+                              v-model="p.harvested"/>
               </td>
-							<td>{{p.planned}}</td>
+							<td>{{p.planned.total}}</td>
 							<td>{{displayUnit(p.unit)}}</td>
 						</tr>
 					</tbody>
@@ -29,6 +37,11 @@
 <script>
 export default {
   name: 'ProductList',
+  data() {
+    return {
+      harvestInput: false,
+    }
+  },
   props: {
     products: Array,
   },
@@ -38,16 +51,29 @@ export default {
         case "p":
           return "Stück"
         case "g":
-          return "Gramm"
+          return "kg"
         default:
           return "k/A"
       }
-    }
+    },
+    toggleHarvestInput(e) {
+      console.dir("click")
+      this.harvestInput = !this.harvestInput 
+      console.dir(this.$refs)
+      this.$nextTick(() => {
+          this.$refs.harvest.select()
+          this.$refs.harvest.focus()
+        })
+    },
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .table-container{
+}
+
+.harvest-input {
+  width: 100%;
 }
 </style>

@@ -5,8 +5,7 @@
         <thead>
           <tr>
             <th>Produkt</th>
-            <th>Berechnet</th>
-            <th>Geplant</th>
+            <th>Menge</th>
             <th>Einheit</th>
           </tr>
         </thead>
@@ -14,8 +13,7 @@
           <tr v-for="(p, index) in products" :key="p.name+index"
             @click="selectItem(p)">
             <td>{{p.name}}</td>
-            <td>{{p.amount}}</td>
-            <td>{{p.planned}}</td>
+            <td>{{ planned(p) }}</td>
             <td>{{displayUnit(p.unit)}}</td>
           </tr>
         </tbody>
@@ -37,13 +35,20 @@ export default {
         case "p":
           return "Stück"
         case "g":
-          return "Gramm"
+          return "kg"
         default:
           return "k/A"
       }
     },
     selectItem(p){
       this.$emit('selected', p.name)
+    },
+    planned(p){
+      if (p.planned && p.planned[this.type])
+      {
+        return p.planned[this.type]
+      }
+      return 0
     }
   }
 }
