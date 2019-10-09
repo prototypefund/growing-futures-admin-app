@@ -8,7 +8,7 @@
             {{ item.name }}
           </div>
         </div>
-       </div>
+     </div>
 
       <button v-if="lastSelection" class="button back-button" @click.stop="back()">
         <i class="fa fa-chevron-down" style="margin-left:8px;">zurück</i>
@@ -87,6 +87,5 @@ export default {
   background: rgba(0,0,0,0.1);
   border: 1px white solid;
 }
-
 
 </style>

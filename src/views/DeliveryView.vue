@@ -9,32 +9,42 @@
         <div class="harvest-header">
           Ernteplan
 
-          <button class="button add-button" @click.stop="productSelection=true">
+          <button class="button add-button" @click.stop="displayProductSelection=true">
             <i class="fa fa-plus"></i>
           </button>
+
+
         </div>
 
         <product-list v-if="Array.isArray(products) && products.length" 
           :products="products"/>
           
-        <product-selection v-if="productSelection"
-          @close="productSelection=false"
+        <product-selection v-if="displayProductSelection"
+          @close="displayProductSelection=false"
           @selected="addToSelection"/>
 
         <div class="harvest-header">Ausgabeplan</div>
           <div class="share-type" v-for="shareType in shareTypes" :key="shareType.type">
             <div class="share" v-if="Array.isArray(products) && products.length">
-              {{ shareType.name }}
+              {{ shareType.name }} ({{ shareType.shares }} Mal)
               <share-list :products="shareSplit[shareType.name]" :type=shareType.name
-                @addPlanned="updateShare"/>
+                @selected="productConfiguration"/>
             </div>
           </div>
         </div>
+
+        <product-configuration v-if="displayProductConfiguration"
+          :shareTypes="shareTypes"
+          :product="selectedProduct"
+          @close="displayProductConfiguration = false"
+          @done="displayProductConfiguration = false"/>
+
   </div>
 </template>
 
 <script>
 import ProductList from '@/components/ProductList.vue'
+import ProductConfiguration from '@/components/ProductConfiguration.vue'
 import ShareList from '@/components/ShareList.vue'
 import ProductSelection from '@/components/ProductSelection.vue'
 
@@ -44,6 +54,7 @@ export default {
     ProductList,
     ShareList,
     ProductSelection,
+    ProductConfiguration,
   },
   data() {
     return {
@@ -64,7 +75,9 @@ export default {
 
       products: [],
       shareSplit: {},
-      productSelection: false
+      displayProductSelection: false,
+      displayProductConfiguration: false,
+      selectedProduct: null
     }
   },
   methods: {
@@ -86,24 +99,33 @@ export default {
       this.closeProductSelection()
     },
     closeProductSelection(){
-      this.productSelection = false
+      this.displayProductSelection = false
+    },
+    productConfiguration(product) {
+      this.displayProductConfiguration = true
+      this.selectedProduct = this.products.find(p => p.name == product)
     },
     updateShare(o){
       console.log("updating")
       let split = this.shareSplit[o.type].find(item => item.name == o.product)
       this.$set(split, 'planned', o.planned)
-      this.productSummary()
+      this.upateProductSummary()
     },
-    productSummary() {
+    upateProductSummary() {
       this.products.forEach(prod => {
         let result = []
         this.shareTypes.forEach(type => {
           let found = this.shareSplit[type.name].find(splitElement => splitElement.name == prod.name)
-          let amount = found.planned * type.shares
+          let amount = 0
+          if (found.planned) {
+            amount = found.planned * type.shares
+          }
           result.push(amount)
         })
         let veggi = this.products.find(item => item.name == prod.name)
-        this.$set(veggi, 'planned', result.reduce((a, b) => a + b, 0))
+        let sum = result.reduce((a,b) => a + b, 0)
+        console.log(sum)
+        this.$set(veggi, 'planned', sum)
       })
     }
   }
