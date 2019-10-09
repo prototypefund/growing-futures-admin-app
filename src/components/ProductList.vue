@@ -1,36 +1,12 @@
 <template>
   <div class="product-list-container">
-    <div class="table-container">
-			<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-					<thead>
-						<tr>
-							<th>Produkt</th>
-							<th>Geerntet</th>
-							<th>Geplant</th>
-							<th>Einheit</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr v-for="(p, index) in products" :key="p.name+index">
-							<td>{{p.name}}</td>
-              <td @click="toggleHarvestInput">
-                <span v-if="!harvestInput" v-model="p.harvested">
-                  {{ p.harvested }}
-                </span>
-                <input v-else type="number"
-                              ref="harvest"
-                              @keyup.enter="harvestinput = !harvestinput"
-                              @click.stop
-                              class="harvest-input"
-                              v-model="p.harvested"/>
-              </td>
-							<td>{{p.planned.total}}</td>
-							<td>{{displayUnit(p.unit)}}</td>
-						</tr>
-					</tbody>
-				</table>
+      <div class="grid-container">
+        <div class="item" v-for="(item, index) in products" :key=item.name>
+          <div class="grid-item" @click.stop="select(item)">
+              {{ item.name }}
+          </div>
+        </div>
 			</div>
-    </div>
   </div>
 </template>
 
@@ -70,6 +46,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/tiled-grid.scss';
 .table-container{
 }
 

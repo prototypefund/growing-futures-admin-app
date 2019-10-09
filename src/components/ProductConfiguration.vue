@@ -46,7 +46,7 @@
             <button class="button header-button" @click.stop="splitHarvest()"
               :disabled="!harvestUsed"
               :class="{'inactive-header': !harvestUsed}">
-              <i class="fa fa-share"></i>
+              <i class="fa fa-share-alt" style="transform: rotate(90deg)"></i>
             </button>
           </div>
         </div>
@@ -95,7 +95,7 @@ export default {
       }
 
       this.shareTypes.forEach(share => this.range.push(this.planned[share.type]))
-      this.range = [...new Set(this.range)].sort()
+      this.range = Array.from(new Set(...this.range)).sort()
       console.log(this.range)
     },
     splitHarvestByWeight() {
