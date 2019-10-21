@@ -1,0 +1,57 @@
+[
+    {
+        "name": "Salat",
+        "id": "salat",
+        "image": "/path/to/image"
+    },
+    {
+        "name": "Blattgem\u00fcse",
+        "id": "blattgemuese",
+        "image": "path/to/image"
+    },
+    {
+        "name": "Fruchtgem\u00fcse",
+        "id": "fruchtgemuese",
+        "image": "path/to/image"
+    },
+    {
+        "name": "Kohl",
+        "id": "kohl",
+        "image": "path/to/image"
+    },
+    {
+        "name": "K\u00fcrbis",
+        "id": "kuerbis",
+        "image": "path/to/image"
+    },
+    {
+        "name": "Getreide",
+        "id": "getreide",
+        "image": "path/to/image"
+    },
+    {
+        "name": "Wurzeln & Knollen",
+        "id": "wurzelgemuese",
+        "image": "path/to/image"
+    },
+    {
+        "name": "Erbsen & Bohnen",
+        "id": "huelsenfruechte",
+        "image": "path/to/image"
+    },
+    {
+        "name": "Obst",
+        "id": "obst",
+        "image": "path/to/image"
+    },
+    {
+        "name": "Beeren",
+        "id": "beeren",
+        "image": "path/to/image"
+    },
+    {
+        "name": "N\u00fcsse",
+        "id": "nuesse",
+        "image": "path/to/image"
+    }
+]

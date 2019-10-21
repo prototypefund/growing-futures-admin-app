@@ -9,9 +9,9 @@
             {{ item.name }}
           </div>
         </div>
-       </div>
+      </div>
 
-      <div class="item-configuration" v-if="showItemConfiguration">
+      <div v-else class="item-configuration" >
         <div class="selection-header"> {{ selectedItem.name }} </div>
         <div class="share-amount" v-for="shareType in shareTypes">
           {{ shareType.name }} 
@@ -33,13 +33,15 @@
 
 <script>
 import items from '@/data/vegetables.json'
+import categories from '@/data/categories.json'
 
 export default {
   name: 'ConfigureDelivery',
   data() {
     return {
       items: items,
-      displayedItems: items,
+      items: categories,
+      displayedItems: categories,
       lastSelection: null,
       selecteItem: {},
       showItemConfiguration: false

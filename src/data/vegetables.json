@@ -1,116 +1,771 @@
 [
-  {
-    "name": "Salat",
-    "image": "/path/to/image",
-    "items": [
-      {
+    {
         "name": "Bataviasalat",
         "image": "/path/to/image",
+        "categories": [
+            "salat"
+        ],
         "unit": "p"
-      },
-      {
+    },
+    {
         "name": "Eichblattsalat",
         "image": "/path/to/image",
+        "categories": [
+            "salat"
+        ],
         "unit": "p"
-      },
-      {
+    },
+    {
         "name": "Salatkopf (Mischung)",
         "image": "/path/to/image",
+        "categories": [
+            "salat"
+        ],
         "unit": "p"
-      },
- 
-      {
+    },
+    {
         "name": "Eisbergsalat",
         "image": "/path/to/image",
+        "categories": [
+            "salat"
+        ],
         "unit": "p"
-      },
-      {
+    },
+    {
         "name": "Endiviensalat",
         "image": "/path/to/image",
+        "categories": [
+            "salat"
+        ],
         "unit": "p"
-      },
-      {
+    },
+    {
         "name": "Feldsalat",
         "image": "/path/to/image",
+        "categories": [
+            "salat"
+        ],
         "unit": "p"
-      },
-      {
+    },
+    {
         "name": "Kopfsalat",
         "image": "/path/to/image",
+        "categories": [
+            "salat"
+        ],
         "unit": "p"
-      },
-      {
+    },
+    {
         "name": "Lollo Bionda",
         "image": "/path/to/image",
+        "categories": [
+            "salat"
+        ],
         "unit": "p"
-      },
-      {
+    },
+    {
         "name": "Lollo Rosso",
         "image": "/path/to/image",
+        "categories": [
+            "salat"
+        ],
         "unit": "p"
-      }
-    ]
-  },
-  {
-    "name": "Blattgemüse",
-    "image": "path/to/image",
-    "items": [
-      {
+    },
+    {
+        "name": "Zuckerhut",
+        "image": "/path/to/image",
+        "categories": [
+            "salat",
+            "blattgemuse"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Chicor\u00e9e",
+        "image": "/path/to/image",
+        "categories": [
+            "salat",
+            "blattgemuse"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Radicchio",
+        "image": "/path/to/image",
+        "categories": [
+            "salat",
+            "blattgemuse"
+        ],
+        "unit": "p"
+    },
+    {
         "name": "Mangold",
         "image": "",
+        "categories": [
+            "salat",
+            "blattgemuese"
+        ],
         "unit": "g"
-      },
-      {
+    },
+    {
         "name": "Spinat",
         "image": "",
+        "categories": [
+            "salat",
+            "blattgemuese"
+        ],
         "unit": "g"
-      },
-      {
+    },
+    {
         "name": "Chinakohl",
         "image": "",
+        "categories": [
+            "salat",
+            "blattgemuese",
+            "kohl"
+        ],
         "unit": "g"
-      },
-      {
-        "name": "Grünkohl",
+    },
+    {
+        "name": "Gr\u00fcnkohl",
         "image": "",
+        "categories": [
+            "blattgemuese",
+            "kohl"
+        ],
         "unit": "g"
-      }
-    ]
-  },
-  {
-    "name": "Fruchtgemüse",
-    "image": "path/to/image",
-    "items": [
-      {
+    },
+    {
         "name": "Tomate",
         "image": "",
+        "categories": [
+            "fruchtgemuese"
+        ],
         "unit": "g"
-      },
-      {
+    },
+    {
         "name": "Mini-Tomate",
         "image": "",
+        "categories": [
+            "fruchtgemuese"
+        ],
         "unit": "g"
-      },
-      {
+    },
+    {
         "name": "Zucchini",
         "image": "",
+        "categories": [
+            "fruchtgemuese"
+        ],
         "unit": "g"
-      },
-      {
+    },
+    {
         "name": "Paprika",
         "image": "",
+        "categories": [
+            "fruchtgemuese"
+        ],
         "unit": "g"
-      },
-      {
+    },
+    {
         "name": "Pepperoni",
         "image": "",
+        "categories": [
+            "fruchtgemuese"
+        ],
         "unit": "g"
-      },
-      {
-        "name": "Gurke",
+    },
+    {
+        "name": "Schlangengurke",
         "image": "",
+        "categories": [
+            "fruchtgemuese"
+        ],
         "unit": "p"
-      }
-    ]
-  }
+    },
+    {
+        "name": "Blumenkohl",
+        "image": "",
+        "categories": [
+            "kohl"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Broccoli",
+        "image": "",
+        "categories": [
+            "kohl"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Mair\u00fcbe",
+        "image": "",
+        "categories": [
+            "kohl",
+            "wurzelgemuese"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Romanesco",
+        "image": "",
+        "categories": [
+            "kohl"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Rosenkohl",
+        "image": "",
+        "categories": [
+            "kohl"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Rotkohl",
+        "image": "",
+        "categories": [
+            "kohl"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Spitzkohl",
+        "image": "",
+        "categories": [
+            "kohl"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Steckr\u00fcbe",
+        "image": "",
+        "categories": [
+            "kohl",
+            "wurzelgem\u00fcse"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Wei\u00dfkohl",
+        "image": "",
+        "categories": [
+            "kohl"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Wirsing",
+        "image": "",
+        "categories": [
+            "kohl"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Butternutk\u00fcrbis",
+        "image": "",
+        "categories": [
+            "kuerbis",
+            "fruchtgemuese"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Hokkaidok\u00fcrbis",
+        "image": "",
+        "categories": [
+            "kuerbis",
+            "fruchtgemuese"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Riesenk\u00fcrbis",
+        "image": "",
+        "categories": [
+            "kuerbis",
+            "fruchtgemuese"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Aubergine",
+        "image": "",
+        "categories": [
+            "fruchtgemuese"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Pepperoni",
+        "image": "",
+        "categories": [
+            "kuerbis",
+            "fruchtgemuese"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Minigurken",
+        "image": "",
+        "categories": [
+            "fruchtgemuese"
+        ],
+        "unit": "g"
+    },
+    {
+        "name": "Einlegegurken",
+        "image": "",
+        "categories": [
+            "fruchtgemuese"
+        ],
+        "unit": "g"
+    },
+    {
+        "name": "Wassermelone",
+        "image": "",
+        "categories": [
+            "fruchtgemuese"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Zuckermelone",
+        "image": "",
+        "categories": [
+            "fruchtgemuese"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Zuckermais",
+        "image": "",
+        "categories": [
+            "fruchtgemuese",
+            "getreide"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Karotte",
+        "image": "",
+        "categories": [
+            "wurzelgemuese"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Kartoffel",
+        "image": "",
+        "categories": [
+            "wurzelgemuese"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Pastinake",
+        "image": "",
+        "categories": [
+            "wurzelgemuese"
+        ],
+        "unit": "g"
+    },
+    {
+        "name": "Radieschen",
+        "image": "",
+        "categories": [
+            "wurzelgemuese"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Wei\u00dfer Rettich",
+        "image": "",
+        "categories": [
+            "wurzelgemuese"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Schwarzer Rettich",
+        "image": "",
+        "categories": [
+            "wurzelgemuese"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Sellerie",
+        "image": "",
+        "categories": [
+            "wurzelgemuese"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "S\u00fc\u00dfkartoffel",
+        "image": "",
+        "categories": [
+            "wurzelgemuese"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Topinambur",
+        "image": "",
+        "categories": [
+            "wurzelgemuese"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Petersilienwurzel",
+        "image": "",
+        "categories": [
+            "wurzelgemuese"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Schwarzwurzel",
+        "image": "",
+        "categories": [
+            "wurzelgemuese"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Zuckerr\u00fcbe",
+        "image": "",
+        "categories": [
+            "wurzelgemuese"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Haferwurzel",
+        "image": "",
+        "categories": [
+            "wurzelgemuese"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "B\u00e4rlauch",
+        "image": "",
+        "categories": [
+            "zwiebeln"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Knoblauch",
+        "image": "",
+        "categories": [
+            "zwiebeln"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Lauch",
+        "image": "",
+        "categories": [
+            "zwiebeln"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Gem\u00fcsezwiebel",
+        "image": "",
+        "categories": [
+            "zwiebeln"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Zwiebel (wei\u00df)",
+        "image": "",
+        "categories": [
+            "zwiebeln"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Zwiebel (rot)",
+        "image": "",
+        "categories": [
+            "zwiebeln"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Fr\u00fchlingszwiebel",
+        "image": "",
+        "categories": [
+            "zwiebeln"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Schalotten",
+        "image": "",
+        "categories": [
+            "zwiebeln"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Zwiebel (gelb)",
+        "image": "",
+        "categories": [
+            "zwiebeln"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Stangenbohne",
+        "image": "",
+        "categories": [
+            "huelsenfruechte"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Buschbohne",
+        "image": "",
+        "categories": [
+            "huelsenfruechte"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Schlangenbohne",
+        "image": "",
+        "categories": [
+            "huelsenfruechte"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Zuckererbsten",
+        "image": "",
+        "categories": [
+            "huelsenfruechte"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Markerbsen",
+        "image": "",
+        "categories": [
+            "huelsenfruechte"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Edamame",
+        "image": "",
+        "categories": [
+            "huelsenfruechte"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "\u00c4pfel",
+        "image": "",
+        "categories": [
+            "obst"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Birnen",
+        "image": "",
+        "categories": [
+            "obst"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Sauerkirsche",
+        "image": "",
+        "categories": [
+            "obst"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Mirabelle",
+        "image": "",
+        "categories": [
+            "obst"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Quitten",
+        "image": "",
+        "categories": [
+            "obst"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Pflaumen",
+        "image": "",
+        "categories": [
+            "obst"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Kiwi",
+        "image": "",
+        "categories": [
+            "obst",
+            "beeren"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Pfirsich",
+        "image": "",
+        "categories": [
+            "obst"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Joahnnisbeeren (rot)",
+        "image": "",
+        "categories": [
+            "beeren"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Joahnnisbeeren (schwarz)",
+        "image": "",
+        "categories": [
+            "beeren"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Joahnnisbeeren (wei\u00df)",
+        "image": "",
+        "categories": [
+            "beeren"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Stachelbeeren",
+        "image": "",
+        "categories": [
+            "beeren"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Himbeeren",
+        "image": "",
+        "categories": [
+            "beeren"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Brombeeren",
+        "image": "",
+        "categories": [
+            "beeren"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Heidelbeeren",
+        "image": "",
+        "categories": [
+            "beeren"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Aroniabeeren",
+        "image": "",
+        "categories": [
+            "beeren"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Gojibeeren",
+        "image": "",
+        "categories": [
+            "beeren"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Schlehen",
+        "image": "",
+        "categories": [
+            "beeren"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Erbeeren",
+        "image": "",
+        "categories": [
+            "beeren"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Tafeltrauben",
+        "image": "",
+        "categories": [
+            "beeren"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Haseln\u00fcsse",
+        "image": "",
+        "categories": [
+            "nuesse"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Waln\u00fcsse",
+        "image": "",
+        "categories": [
+            "nuesse"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Esskastanien",
+        "image": "",
+        "categories": [
+            "nuesse"
+        ],
+        "unit": "p"
+    },
+    {
+        "name": "Erdn\u00fcsse",
+        "image": "",
+        "categories": [
+            "huelsenfruechte",
+            "nuesse"
+        ],
+        "unit": "p"
+    }
 ]
