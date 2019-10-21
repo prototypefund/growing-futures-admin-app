@@ -5,8 +5,8 @@
         Suchen <input @click.stop @input="searchTerm=$event.target.value" />
       </div>
       <div class="grid-container">
-        <div class="item" v-for="(item, index) in displayedItems" :key=item.name>
-          <div class="grid-item" @click.stop="select(item)">
+        <div class="item" v-for="(item, index) in displayedItems" :key=item.name @click.stop="select(item)">
+          <div class="grid-item">
             {{ item.name }}
           </div>
         </div>

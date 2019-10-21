@@ -7,6 +7,13 @@
           <div class="header-grid-item">
             <div class="product-name"> {{ product.name }} </div>
           </div>
+
+          <div class="grid-item">
+            <button class="button header-button" @click.stop="toggleUnit">
+              {{ displayUnit }}
+            </button>
+          </div>
+ 
           <div class="grid-item">
             <button class="button header-button save-button" @click.stop="done">
               <i class="fa fa-check"></i>
@@ -95,8 +102,7 @@ export default {
       }
 
       this.shareTypes.forEach(share => this.range.push(this.planned[share.type]))
-      this.range = Array.from(new Set(...this.range)).sort()
-      console.log(this.range)
+      this.range = Array.from(new Set(this.range)).sort()
     },
     splitHarvestByWeight() {
       let round = 40
@@ -126,8 +132,8 @@ export default {
       let shareTotal = this.shareTypes.reduce((a, b) => a + b.factor, 0)
       let buildShareTotal =  (share, shareTotal) => {
         return {'type': share.type,
-        'factor': share.factor/shareTotal,
-        'shares': share.shares}
+                'factor': share.factor/shareTotal,
+                'shares': share.shares}
       }
       return this.shareTypes.map(share => buildShareTotal(share, shareTotal))
     },
@@ -161,6 +167,15 @@ export default {
       } else { 
         this.$emit('done', this.createResponse())
       }
+    },
+    toggleUnit(){
+      if (this.product.unit == 'p') {
+        this.product.unit = 'g'
+      } else if (this.product.unit == 'g')
+      {
+        this.product.unit = 'p'
+      }
+      this.planned = {}
     }
   },
   computed: {
@@ -173,12 +188,10 @@ export default {
     total: function() {
       let amount = 0
       this.shareTypes.forEach(t => {
-        console.log(t.type)
         if (!this.planned)
         {
           this.planned = {}
         }
-        console.log(this.planned)
         let planPerShare = this.planned[t.type]
         if (planPerShare)
         {
@@ -242,7 +255,7 @@ export default {
 
 .header-grid-item {
  font-size: 0.8em;
- grid-column: 1 / span 3;
+ grid-column: 1 / span 2;
 }
 
 .text-grid-item {
