@@ -9,8 +9,8 @@
           </div>
 
           <div class="grid-item">
-            <button class="button header-button" @click.stop="toggleUnit">
-              {{ displayUnit }}
+            <button class="button gray-header-button" @click.stop="toggleUnit">
+              {{ product.unit | displayUnit }}
             </button>
           </div>
  
@@ -22,7 +22,7 @@
           <div class="grid-item">
             Bedarf
                 <button class="button header-button" @click.stop="">
-              {{ total }} {{ displayUnit }}
+              {{ total }} {{ product.unit | displayUnit }}
             </button>
           </div>
 
@@ -31,7 +31,7 @@
             <button class="button header-button" v-if="!inputHarvestInfo"
                                                  @click.stop="toggleHarvestInput"
               :class="{'inactive-header': !harvestUsed}">
-              {{ harvested }} {{ displayUnit }}
+              {{ harvested }} {{ product.unit | displayUnit }}
             </button>
             <input v-else type="number"
                           ref="harvestinput"
@@ -45,7 +45,7 @@
             <button class="button header-button" @click.stop=""
               :disabled="!harvestUsed"
               :class="{'inactive-header': !harvestUsed, 'error-header': bufferOverflow}">
-              {{ buffer }} {{ displayUnit }}
+              {{ buffer }} {{ product.unit | displayUnit }}
             </button>
           </div>
           <div class="grid-item">
@@ -75,9 +75,11 @@
 <script>
 import ScrollPicker from './scroll-picker/ScrollPicker.js'
 import range from '@/data/kilogrammRange.json'
+import { display } from '@/mixins/display.js'
 
 export default {
   name: 'ProductConfiguration',
+  mixins: [display],
   components: {
     ScrollPicker,
   },
@@ -215,17 +217,6 @@ export default {
       }
       return this.total
     },
-
-    displayUnit: function() {
-      switch (this.product.unit) {
-        case "p":
-          return " Stück"
-        case "g":
-          return "kg"
-        default:
-          return "k/A"
-      }
-    },
     scrollOptions: function() {
       switch (this.product.unit) {
         case "p":
@@ -316,6 +307,23 @@ export default {
   width: 100%;
   height: 100%;
 }
+
+.gray-header-button {
+  font-weight: bold;
+  float: left;
+  width: 80%;
+  height: 80%;
+  line-height: 80%;
+  background-color: LightGrey;
+  color: black;
+
+  &:hover {
+    background-color: lighten(LightGrey, 5%);
+  }
+
+}
+
+
 
 .text-input {
   width: 100%

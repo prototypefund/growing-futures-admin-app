@@ -1,6 +1,6 @@
 <template>
   <div class="share-calculation-container">
-    <div class="hello">
+    <div class="share-table">
       <h1>{{ shareType.name }}</h1>
 			<div class="table-container">
 			<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">

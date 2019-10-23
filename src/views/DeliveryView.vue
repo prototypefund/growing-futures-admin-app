@@ -27,14 +27,13 @@
                   <div class="grid-button"
                        :class="{'product-ok': item.done}"
                        @click.stop="toggleProductDone(item)">
-                    <i v-if="item.done" class="fa fa-check"></i>
-                    <i v-else class="fa fa-check"></i>
+                    <i class="fa fa-check"></i>
                   </div>
                 </div>
                 <div class="sub-grid-header planned">
                   <div class="grid-button" :class="{'product-planned': isPlanned(item),
                                           'product-ok': isHarvested(item)}">
-                    {{ plannedOrHarvested(item) }}  {{displayUnit(item.unit)}}
+                    {{ plannedOrHarvested(item) }}  {{item.unit | displayUnit }}
                   </div>
                 </div>
 
@@ -76,8 +75,11 @@ import ProductConfiguration from '@/components/ProductConfiguration.vue'
 import ShareList from '@/components/ShareList.vue'
 import ProductSelection from '@/components/ProductSelection.vue'
 
+import { display } from '@/mixins/display.js'
+
 export default {
   name: 'Delivery',
+  mixins: [display],
   components: {
     ShareList,
     ProductSelection,
@@ -108,17 +110,8 @@ export default {
     }
   },
   methods: {
-    displayUnit(unit){
-      switch (unit) {
-        case "p":
-          return "Stück"
-        case "g":
-          return "kg"
-        default:
-          return "k/A"
-      }
-    },
     addToSelection(item) {
+      console.dir(item)
       let alreadyInList = this.products
         .filter(i => i.name == item.name)
         .length
@@ -129,6 +122,9 @@ export default {
         this.shareTypes.forEach(type => item.planned[type] = 0)
         item.harvested = 0
         item.done = false
+        
+        // clone object to make everything reactive
+        item = JSON.parse(JSON.stringify(item));
         this.products.push(item)
 
         this.shareTypes.forEach( elt => {
@@ -157,6 +153,7 @@ export default {
     },
     toggleProductDone(r) {
       var product = this.products.find(p => p.name == r.name)
+      console.dir(product)
       product.done = !product.done
     },
     plannedOrHarvested(p) {

@@ -14,7 +14,7 @@
             @click="selectItem(p)">
             <td>{{p.name}}</td>
             <td>{{ planned(p) }}</td>
-            <td>{{displayUnit(p.unit)}}</td>
+            <td>{{p.unit | displayUnit }}</td>
           </tr>
         </tbody>
       </table>
@@ -23,23 +23,15 @@
 </template>
 
 <script>
+import { display } from '@/mixins/display.js'
 export default {
+  mixins: [display],
   name: 'ShareList',
   props: {
     products: Array,
     type: String
   },
   methods: {
-    displayUnit(unit){
-      switch (unit) {
-        case "p":
-          return "Stück"
-        case "g":
-          return "kg"
-        default:
-          return "k/A"
-      }
-    },
     selectItem(p){
       this.$emit('selected', p.name)
     },
