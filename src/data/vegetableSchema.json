@@ -6,11 +6,13 @@
     "properties": {
         "name": {
             "description": "The name of the product",
-            "type": "string"
+            "type": "string",
+            "xDisplay": "Name"
         },
         "image": {
             "description": "A url to an icon for this vegetable 256x256",
-            "type": "string"
+            "type": "string",
+            "xDisplay": "Image"
         },
         "categories": {
             "description": "A url to an icon for this vegetable 256x256",
@@ -19,11 +21,13 @@
                 "type": "string"
             },
             "minItems": 1,
-            "uniqueItems": true
+            "uniqueItems": true,
+            "xDisplay": "Categories"
         },
         "unit": {
             "type": "string",
-            "description": "The default unit used for this product"
+            "description": "The default unit used for this product",
+            "xDisplay": "Unit"
         }
     },
     "required": [

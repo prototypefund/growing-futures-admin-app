@@ -1,22 +1,30 @@
 <template>
   <div class="data-admin-view-container">
     <div>
-      Hello
+      Edit Data
+      <edit-data :schema="schema" :item="{}" @save="save"/>
     </div>
   </div>
 </template>
 
 <script>
 import veggieSchema from '@/data/vegetableSchema.json'
+import EditData from '@/components/db-admin/EditData.vue'
 
 export default {
   name: 'DataAdminView',
   components: {
+    EditData,
   },
   data() {
-    return {}
+    return {
+      schema: veggieSchema,
+    }
   },
   methods: {
+    save(item){
+      console.dir(item)
+    }
   },
   props: {
   }

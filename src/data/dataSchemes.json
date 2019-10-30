@@ -1,0 +1,22 @@
+[
+    {
+        "schemaName": "vegetables",
+        "schemaUrl": "someUrl",
+        "baseUrl": "someUrl"
+    },
+    {
+        "schemaName": "users",
+        "schemaUrl": "someUrl",
+        "baseUrl": "someUrl"
+    },
+    {
+        "schemaName": "shareTypes",
+        "schemaUrl": "someUrl",
+        "baseUrl": "someUrl"
+    },
+    {
+        "schemaName": "depots",
+        "schemaUrl": "someUrl",
+        "baseUrl": "someUrl"
+    }
+]
