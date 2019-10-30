@@ -1,0 +1,15 @@
+[
+    {
+        "type": "big",
+        "name": "Gro\u00dfer Anteil",
+        "factor": 1,
+        "shares": 46
+        "destinations": 
+    },
+    {
+        "type": "small",
+        "name": "Kleiner Anteil",
+        "factor": 0.5,
+        "shares": 38
+    }
+]

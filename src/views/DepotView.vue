@@ -15,7 +15,7 @@
 						<tr v-for="(p, index) in depot.delivery" :key="p.name+index">
 							<td>{{p.name}}</td>
 							<td>{{p.amount}}</td>
-							<td>{{p.unit}}</td>
+							<td>{{p.unit | displayUnit }}</td>
 						</tr>
 					</tbody>
 				</table>
@@ -28,9 +28,11 @@
 
 <script>
 import Constants from '@/utils/Constants.js'
+import { display } from '@/mixins/display.js'
 
 export default {
   name: 'DepotView',
+  mixins: [display],
   components: {
   },
   data() {

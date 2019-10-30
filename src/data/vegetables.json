@@ -301,15 +301,6 @@
         "unit": "p"
     },
     {
-        "name": "Pepperoni",
-        "image": "",
-        "categories": [
-            "kuerbis",
-            "fruchtgemuese"
-        ],
-        "unit": "p"
-    },
-    {
         "name": "Minigurken",
         "image": "",
         "categories": [

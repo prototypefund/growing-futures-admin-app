@@ -1,13 +1,14 @@
+import Constants from "../utils/Constants.js"
 export const display = {
   filters: {
     displayUnit: function (unit) {
       switch (unit) {
-          case "p":
-            return "Stück"
-          case "g":
-            return "kg"
-          default:
-            return "k/A"
+        case Constants.PIECE:
+          return "Stück"
+        case Constants.WEIGHT:
+          return "kg"
+        default:
+          return "k/A"
       }
     }
   }

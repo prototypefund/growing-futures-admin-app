@@ -8,14 +8,24 @@
             <div class="product-name"> {{ product.name }} </div>
           </div>
 
+          
           <div class="grid-item">
-            <button class="button gray-header-button" @click.stop="toggleUnit">
+            <button class="button control-button delete-button" @click.stop="remove">
+              <i class="fa fa-trash"></i>
+            </button>
+          </div>
+
+          <div class="grid-item">
+            <button class="button control-button gray-header-button" @click.stop="toggleUnit">
               {{ product.unit | displayUnit }}
             </button>
           </div>
+          <div class="grid-item">
+          </div>
+
  
           <div class="grid-item">
-            <button class="button header-button save-button" @click.stop="done">
+            <button class="button header-button control-button save-button" @click.stop="done">
               <i class="fa fa-check"></i>
             </button>
           </div>
@@ -65,9 +75,12 @@
           <!-- <b-input v-model="planned[t.type]"></b-input> -->
           <scroll-picker v-model="planned[t.type]" :options="scrollOptions"/>
         </div>
-        <hr class="divider"/>
-       </div>
 
+        <div>
+          <hr class="divider"/>
+        </div>
+
+      </div>
     </div>
   </div>
 </template>
@@ -178,6 +191,9 @@ export default {
         this.product.unit = 'p'
       }
       this.planned = {}
+    },
+    remove() {
+      this.$emit('remove', this.product.name)
     }
   },
   computed: {
@@ -226,7 +242,6 @@ export default {
         default:
           return "k/A"
       }
-
     }
   }
 }
@@ -237,16 +252,16 @@ export default {
 
 .header-grid{
   margin-top: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 40% 40%;
+  grid-template-rows: 20% 40% 40%;
   grid-row-gap: 5px;
 }
 
 .header-grid-item {
  font-size: 0.8em;
- grid-column: 1 / span 2;
+ grid-column: 1 / span 4;
 }
 
 .text-grid-item {
@@ -308,11 +323,20 @@ export default {
   height: 100%;
 }
 
+
+
+.control-button {
+  width: 80%;
+  height: 80%;
+}
+
+.delete-button {
+ background-color: red;
+}
+
 .gray-header-button {
   font-weight: bold;
   float: left;
-  width: 80%;
-  height: 80%;
   line-height: 80%;
   background-color: LightGrey;
   color: black;
@@ -323,14 +347,8 @@ export default {
 
 }
 
-
-
 .text-input {
   width: 100%
-}
-
-.save-button {
-  border-radius: 50%;
 }
 
 .warning{

@@ -5,6 +5,11 @@
         "image": "/path/to/image"
     },
     {
+        "name": "Zwiebeln",
+        "id": "zwiebeln",
+        "image": "/path/to/image"
+    },
+    {
         "name": "Blattgem\u00fcse",
         "id": "blattgemuese",
         "image": "path/to/image"

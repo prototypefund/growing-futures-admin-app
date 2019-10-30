@@ -59,13 +59,19 @@
                 @selected="productConfiguration"/>
             </div>
           </div>
+          <button class="button" style="margin-top: 40px;" @click="done">
+          <i class="fa" style="margin-left:8px;">Weiter</i>
+        </button>
         </div>
 
         <product-configuration v-if="displayProductConfiguration"
           :shareTypes="shareTypes"
           :product="selectedProduct"
           @close="displayProductConfiguration = false"
-          @done="handleDoneProductConfiguration"/>
+          @done="handleDoneProductConfiguration"
+          @remove="removeFromProducts"/>
+
+
 
   </div>
 </template>
@@ -103,7 +109,8 @@ export default {
       nextDelivery: new Date("2019-10-04"),
 
       products: [],
-      shareSplit: {},
+      shareSplit: [],
+      mySplits: [],
       displayProductSelection: false,
       displayProductConfiguration: false,
       selectedProduct: null
@@ -111,7 +118,6 @@ export default {
   },
   methods: {
     addToSelection(item) {
-      console.dir(item)
       let alreadyInList = this.products
         .filter(i => i.name == item.name)
         .length
@@ -126,13 +132,6 @@ export default {
         // clone object to make everything reactive
         item = JSON.parse(JSON.stringify(item));
         this.products.push(item)
-
-        this.shareTypes.forEach( elt => {
-          if (!this.shareSplit[elt.name]) {
-            this.$set(this.shareSplit, elt.name, [])
-          }
-          let splitItem = JSON.parse(JSON.stringify(item));
-          this.shareSplit[elt.name].push(splitItem)})
       }
       this.closeProductSelection()
     },
@@ -153,7 +152,6 @@ export default {
     },
     toggleProductDone(r) {
       var product = this.products.find(p => p.name == r.name)
-      console.dir(product)
       product.done = !product.done
     },
     plannedOrHarvested(p) {
@@ -167,6 +165,26 @@ export default {
     },
     isHarvested(p) {
       return p.harvested > 0
+    },
+    done() {
+      let splits = []
+      this.shareTypes.forEach(item =>
+        splits.push({"name": item.name, "type": item.type, "contents": []}))
+      this.products.forEach(product => this.addToSplits(splits, product))
+
+      this.mySplits.length = 0
+      splits.forEach(s => this.mySplits.push(s))
+    },
+    addToSplits(splits, product) {
+      splits.forEach(s => s.contents.push({"name": product.name,
+        "unit": product.unit,
+        "amount": product.planned[s.type],
+        "note": "some note or not"}))
+    },
+    removeFromProducts(productName){
+      this.displayProductConfiguration = false
+      let idx = this.products.findIndex(p => p.name == productName)
+      this.products.pop(idx)
     }
   }
 }
@@ -251,6 +269,10 @@ export default {
 
 .share {
   padding-top: 20px;
+}
+
+.done-button{
+
 }
 
 .share-type{
