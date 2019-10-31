@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Weiden",
+        "address": {
+            "street": "Rehb\u00fchlstra\u00dfe 134",
+            "zip": "92637",
+            "city": "Weiden",
+            "country": "Germany"
+        }
+    },
+    {
+        "name": "Krummennaab",
+        "address": {
+            "street": "Stockau 4",
+            "zip": "02930",
+            "city": "Krummennaab",
+            "country": "Germany"
+        }
+    }
+]

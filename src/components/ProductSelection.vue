@@ -26,15 +26,18 @@
 </template>
 
 <script>
-import items from '@/data/vegetables.json'
 import categories from '@/data/categories.json'
+import { getData } from '@/services/data-service.js'
 
 export default {
   name: 'ProductSelection',
+  mounted() {
+    this.items = getData({"schemaName": "products"})
+  },
   data() {
     return {
       searchTerm: '',
-      items: items,
+      items: [],
       categories: categories,
       manuallySelectedItem: categories,
       lastSelection: null,

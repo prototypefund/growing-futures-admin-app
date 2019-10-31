@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "address",
+    "description": "An address",
+    "type": "object",
+    "properties": {
+        "street": {
+            "description": "",
+            "type": "string",
+            "xDisplay": "Straße"
+        },
+        "Stadt": {
+            "description": "",
+            "type": "string",
+            "xDisplay": "Stadt"
+        },
+        "zip": {
+            "description": "",
+            "type": "string",
+            "xDisplay": "Postleitzahl"
+        },
+        "country": {
+            "description": "",
+            "type": "string",
+            "xDisplay": "Land"
+        }
+    },
+    "required": [
+        "name",
+        "address"
+    ]
+}

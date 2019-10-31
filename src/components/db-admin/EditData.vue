@@ -1,19 +1,19 @@
 <template>
   <div class="edit-data-container">
-    <div v-for="p in Object.keys(schema.properties)">
+    <div v-for="p in schemaProperties">
 
       <div class="header">
-        {{ schema.properties[p].xDisplay }}
+        {{ loadedSchema.properties[p].xDisplay }}
       </div>
       <!-- ARRAY -->
-      <div v-if="schema.properties[p].type == 'array'">
-        <div v-if="schema.properties[p].items.type == 'string'">
+      <div v-if="loadedSchema.properties[p].type == 'array'">
+        <div v-if="loadedSchema.properties[p].items.type == 'string'">
           FIXME Multi-Select or Dropdown
         </div>
       </div> 
 
       <!-- STRING -->
-      <div v-if="schema.properties[p].type == 'string'">
+      <div v-if="loadedSchema.properties[p].type == 'string'">
         <input v-model="item[p]"/>
       </div> 
     </div>
@@ -28,15 +28,32 @@ export default {
   name: 'EditData',
   data() {
     return {
-      item: {}
+      item: {},
     }
   },
   props: {
     schema: Object,
+    data: Object,
   },
   methods: {
     save(){
       this.$emit('save', this.item)
+    }
+  },
+  computed:{
+    schemaProperties() {
+      console.dir(this.loadedSchema)
+      if ("properties" in this.loadedSchema)
+      {
+        return Object.keys(this.loadedSchema.properties)
+      }
+      return []
+    },
+    loadedSchema() {
+      if ("schema" in this.schema) {
+        return this.schema.schema
+      }
+      return {}
     }
   }
 }
@@ -47,7 +64,7 @@ export default {
 
 .header{
   font-weight: bold;
-  font-size: 12pt;
+  font-size: 18pt;
 }
 .table-container{
 }

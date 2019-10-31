@@ -1,7 +1,7 @@
 [
     {
-        "schemaName": "vegetables",
-        "schemaUrl": "someUrl",
+        "schemaName": "products",
+        "schemaUrl": "./vegetableSchema.json",
         "baseUrl": "someUrl"
     },
     {

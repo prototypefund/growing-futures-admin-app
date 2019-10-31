@@ -1,14 +1,26 @@
 <template>
   <div class="data-admin-view-container">
+    <div class="view-header" >
+      Datentypen
+    </div>
+    <div v-for="schema in schemas"
+         class="schemas"
+         v-bind:key="schema.schemaName">
+      <div class="button" @click="selection=schema">
+        {{ schema.schemaName }}
+      </div>
+    </div>
+
+    <div v-for="item in loadedItems">
+    </div>
     <div>
       Edit Data
-      <edit-data :schema="schema" :item="{}" @save="save"/>
+      <edit-data :schema="selection" :data="{}" @save="save"/>
     </div>
   </div>
 </template>
 
 <script>
-import veggieSchema from '@/data/vegetableSchema.json'
 import EditData from '@/components/db-admin/EditData.vue'
 
 export default {
@@ -18,15 +30,21 @@ export default {
   },
   data() {
     return {
-      schema: veggieSchema,
+      selectedDataType: {},
+      selection: {},
     }
   },
   methods: {
     save(item){
       console.dir(item)
-    }
+    },
   },
   props: {
+  },
+  computed: {
+    schemas () {
+      return this.$store.getters.schemas
+    }
   }
 }
 

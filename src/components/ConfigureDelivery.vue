@@ -32,14 +32,12 @@
 </template>
 
 <script>
-import items from '@/data/vegetables.json'
 import categories from '@/data/categories.json'
 
 export default {
   name: 'ConfigureDelivery',
   data() {
     return {
-      items: items,
       items: categories,
       displayedItems: categories,
       lastSelection: null,

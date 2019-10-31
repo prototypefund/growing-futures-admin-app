@@ -7,39 +7,39 @@ import dataSchemes from '@/data/dataSchemes.json'
 
 export default new Vuex.Store({
   state: {
-    vegetables: null,
+    dataSchemes: dataSchemes,
+    data: null
   },
   mutations: {
-    addProduct(state, product) {
-      let exists = state.questions.findIndex(q => q.uid == product.uid)
-      if(exists != -1)
-        Vue.set(state.questions, exists, product)
-      else
-        state.questions.push(product)
-    },
-    removeProduct(state, uid){
-      let i = state.questions.findIndex(q => q.uid == uid)
-      state.questions.splice(i, 1)      
-    },
-
   },
   actions: {
     loadInitialDataFromDatabase() {
       //do things
-    },
-    addProduct({ commit, state }, product) {
-      addProductToDatabase(product)
-        .then(() => commit('addProduct', product))
-        .catch(err => state.error = { message: "product could not be persisted to DB: " + err, timestamp: new Date() })
-    },
-    removeProduct({ commit, state }, uid) {
-      removeProductFromDatabase(uid)
-        .then(() => commit('removeProduct', uid))
-        .catch(err => state.error = { message: "product could not be removed from DB: " + err, timestamp: new Date() })
     }
   },
   getters: {
-    vegetables: state => state.vegetables,
-
+    schemas: state => {
+      var stuff = state.dataSchemes.forEach(schema => {
+        console.dir(schema.schemaName)
+        switch (schema.schemaName) {
+          case "products":
+            schema.schema = require("./data/schemas/productSchema.json")
+            break
+           case "users":
+            schema.schema = require("./data/schemas/userSchema.json")
+            break;
+           case "shareTypes":
+            schema.schema = require("./data/schemas/shareTypeSchema.json")
+            break;
+           case "depots":
+            schema.schema = require("./data/schemas/depotSchema.json")
+            break;
+          default:
+            schema.schema = {}
+        }
+      })
+      console.dir(stuff)
+      return state.dataSchemes
+    }
   }
 })

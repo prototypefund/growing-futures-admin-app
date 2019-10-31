@@ -1,10 +1,9 @@
 [
     {
         "type": "big",
-        "name": "Gro\u00dfer Anteil",
+        "name": "Großer Anteil",
         "factor": 1,
         "shares": 46
-        "destinations": 
     },
     {
         "type": "small",
