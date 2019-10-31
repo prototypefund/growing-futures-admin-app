@@ -28,7 +28,7 @@ export default {
   name: 'EditData',
   data() {
     return {
-      item: {},
+      item: JSON.parse(JSON.stringify(this.data))
     }
   },
   props: {
@@ -54,7 +54,7 @@ export default {
         return this.schema.schema
       }
       return {}
-    }
+    },
   }
 }
 </script>

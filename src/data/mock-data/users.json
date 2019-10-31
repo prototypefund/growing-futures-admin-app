@@ -1,25 +1,25 @@
 [
   {
     "username": "johndoe",
-    "Name": "John Doe",
+    "name": "John Doe",
     "shareType": "small",
     "depot": "Krummennaab"
   },
   {
     "username": "aa",
-    "Name": "Alex Awesome",
+    "name": "Alex Awesome",
     "shareType": "big",
     "depot": "Weiden"
   },
   {
     "username": "jens",
-    "Name": "Udo Oinki",
+    "name": "Udo Oinki",
     "shareType": "big",
     "depot": "Krummennaab"
   },
   {
     "username": "boris",
-    "Name": "Da Boris",
+    "name": "Da Boris",
     "shareType": "small",
     "depot": "Weiden"
   }
