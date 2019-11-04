@@ -6,7 +6,7 @@ $dark: #595D60;
 
 $red: #b31414;
 
-$border-radius: 0px;
+$border-radius: 8px;
 
 .modal-overlay {
   z-index: 1000;
@@ -58,6 +58,29 @@ $border-radius: 0px;
   background-color: white;
   box-shadow: 4px 4px 10px rgba($dark, 0.3);
 }
+
+.input {
+  display: block;
+  margin: 0;
+  padding: 8px 10px;
+  width: 100%;
+  border: 1px solid $primary;
+  border-radius: $border-radius;
+  transition: box-shadow 0.3s;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1.8;
+  box-sizing: border-box;
+  
+  &:focus {
+    outline: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+
 
 .button {
   background-color: $primary;

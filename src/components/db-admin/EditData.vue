@@ -5,27 +5,28 @@
       <div class="header">
         {{ loadedSchema.properties[p].xDisplay }}
       </div>
-      <!-- ARRAY -->
-      <div v-if="loadedSchema.properties[p].type == 'array'">
-        <div v-if="loadedSchema.properties[p].items.type == 'string'">
-          FIXME Multi-Select or Dropdown
-        </div>
-      </div> 
 
-      <!-- STRING -->
-      <div v-if="loadedSchema.properties[p].type == 'string'">
-        <input v-model="item[p]"/>
-      </div> 
-    </div>
-    <div class="button save-button" @click="save">
-      Save
+      <div>
+        <component :is="getComponent(p)" @update="update(p, $event)" v-bind="getProps(p)"> </component>
+      </div>
+
     </div>
   </div>
 </template>
 
 <script>
+import InputSingleSelect from '@/components/db-admin/InputSingleSelect.vue'
+import InputMultiSelect from '@/components/db-admin/InputMultiSelect.vue'
+import TextInput from '@/components/db-admin/TextInput.vue'
+import { getData } from '@/services/data-service.js'
+
 export default {
   name: 'EditData',
+  components: {
+    InputSingleSelect,
+    InputMultiSelect,
+    TextInput,
+  },
   data() {
     return {
       item: JSON.parse(JSON.stringify(this.data))
@@ -36,8 +37,56 @@ export default {
     data: Object,
   },
   methods: {
+    update(p, value){
+      console.dir("UPDATE")
+      console.dir(p)
+      this.item[p] = value
+      console.dir(this.item[p])
+      this.$emit('update', this.item)
+    },
     save(){
       this.$emit('save', this.item)
+    },
+    getReferencedData(name){
+      let schema = this.loadedSchema.properties[name]
+      let data = getData({'schemaName': schema.xRef})
+      return data
+    },
+    getSubschema(p){
+      return this.loadedSchema.properties[p]
+    },
+    getComponent(p) {
+      if (this.hasRef(p)){
+        let subschema = this.getSubschema(p)
+        if (subschema.xType == 'singleSelect')
+        {
+          return "input-single-select"
+        } else if (subschema.xType == 'multiSelect')
+        {
+          return "input-multi-select"
+        }
+      } else if (this.getSubschema(p).type == 'string') {
+        return "text-input"
+      } else if (this.getSubschema(p).type == 'object'){
+        return "edit-data"
+      }
+    },
+    getProps(p) {
+      if (this.hasRef(p)){
+        return {'options': this.getReferencedData(p), 
+                'schema': this.getSubschema(p),
+                'selection': this.data[p]}
+      } else if (this.getSubschema(p).type == 'string')
+      {
+        return {'defaultValue': this.data[p]}
+      } else if (this.getSubschema(p).type == 'object'){
+        return {"schema": {"schema": this.getSubschema(p)}, "data": this.data[p]}
+      }
+    },
+    hasRef(p){
+      let schema = this.getSubschema(p)
+      let keys = Object.keys(schema)
+      return keys.includes('xRef')
     }
   },
   computed:{
@@ -45,7 +94,9 @@ export default {
       console.dir(this.loadedSchema)
       if ("properties" in this.loadedSchema)
       {
-        return Object.keys(this.loadedSchema.properties)
+        let properties = Object.keys(this.loadedSchema.properties)
+        console.dir(properties)
+        return properties
       }
       return []
     },
@@ -55,12 +106,22 @@ export default {
       }
       return {}
     },
+  },
+  watch: {
+    item: function(){
+      console.dir("emmitting update to next level")
+      this.$emit('update', this.item)
+    } 
   }
 }
 </script>
 
 <style lang="scss" scoped>
 @import '@/assets/shared.scss';
+
+.edit-data-container{
+  padding: 40px;
+}
 
 .header{
   font-weight: bold;

@@ -3,18 +3,13 @@
     <div class="view-header" >
       Datentypen
     </div>
-    <div v-for="schema in schemas"
-         class="schemas"
-         v-bind:key="schema.schemaName">
-      <div class="button" @click="selection=schema">
-        {{ schema.schemaName }}
-      </div>
-    </div>
+    <dropdown @change="select" :options="schemaOptions"/>
+    <button v-if="selection" class="button" @click="selectItem({})"> add </button>
 
     <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
       <thead>
         <th v-for="attr in attributes">
-            {{ selection.schema.properties[attr].xDisplay }}
+            {{ selectedSchema.schema.properties[attr].xDisplay }}
         </th>
       </thead>
       <tbody>
@@ -27,31 +22,35 @@
     </table>
     <div v-if="selectedItem">
       Edit Data
-      <edit-data :schema="selection" :data="selectedItem" @save="save"/>
+      <data-modifier :schema="selectedSchema" :data="selectedItem" @save="save"/>
     </div>
   </div>
 </template>
 
 <script>
-import EditData from '@/components/db-admin/EditData.vue'
+import DataModifier from '@/components/db-admin/DataModifier.vue'
+import Dropdown from '@/components/utils/Dropdown.vue'
 import { getData } from '@/services/data-service.js'
 
 export default {
   name: 'DataAdminView',
   components: {
-    EditData,
+    DataModifier,
+    Dropdown,
   },
   data() {
     return {
       selectedDataType: {},
-      selection: {},
+      selection: "",
       selectedItem: null,
     }
   },
   methods: {
     save(item){
       this.selectedItem = null
-      console.dir(item)
+    },
+    select(selectedDataType){
+      this.selection = selectedDataType
     },
     selectItem(item) {
       if (this.selectedItem)
@@ -69,19 +68,30 @@ export default {
       return this.$store.getters.schemas
     },
     loadedItems () {
-      return getData(this.selection)
+      return getData(this.selectedSchema)
     },
     attributes () { 
-      if ("schema" in this.selection && "properties" in this.selection.schema)
+      if (!this.selectedSchema)
       {
-        return Object.keys(this.selection.schema.properties)
+        return []
       }
+      if ("schema" in this.selectedSchema && "properties" in this.selectedSchema.schema)
+      {
+        return Object.keys(this.selectedSchema.schema.properties)
+      }
+    },
+    schemaOptions() {
+      return this.schemas.map(s => s.schemaName)
+    },
+    selectedSchema() {
+      if (this.selection){
+        return this.schemas.find(s => s.schemaName == this.selection) 
+      }
+      return {}
     }
   },
   filters: {
     displayNicely: function (data) {
-      console.log(typeof(data))
-      console.dir(data)
       if (Array.isArray(data)) {
         return data.reduce((a,b) => a.concat(b, ","), "" )
       }
@@ -97,4 +107,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/shared.scss';
+.data-admin-view-container{
+  padding: 40px;
+}
 </style>

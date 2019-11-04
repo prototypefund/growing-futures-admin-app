@@ -19,14 +19,14 @@
             "description": "The default depot used for this user",
             "xDisplay": "Depot",
             "xType": "singleSelect",
-            "xRef": "depot"
+            "xRef": "depots"
         },
         "shareType": {
             "type": "string",
             "description": "The default depot used for this user",
             "xDisplay": "Anteilstyp",
             "xType": "singleSelect",
-            "xRef": "shareType"
+            "xRef": "shareTypes"
         }
     },
     "required": [

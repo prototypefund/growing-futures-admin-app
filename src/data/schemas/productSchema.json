@@ -22,7 +22,9 @@
             },
             "minItems": 1,
             "uniqueItems": true,
-            "xDisplay": "Categories"
+            "xDisplay": "Categories",
+            "xRef": "category",
+            "xType": "multiSelect"
         },
         "unit": {
             "type": "string",

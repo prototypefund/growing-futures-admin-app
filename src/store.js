@@ -34,6 +34,9 @@ export default new Vuex.Store({
            case "depots":
             schema.schema = require("./data/schemas/depotSchema.json")
             break;
+           case "category":
+            schema.schema = require("./data/schemas/categoriesSchema.json")
+            break;
           default:
             schema.schema = {}
         }

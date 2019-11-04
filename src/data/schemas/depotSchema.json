@@ -9,9 +9,33 @@
             "type": "string",
             "xDisplay": "Depotname"
         },
-        "address": 
-        {
-         "$ref": "addressSchema.json#/address"
+        "address": {
+            "title": "address",
+            "description": "An address",
+            "type": "object",
+            "properties": {
+                "street": {
+                    "description": "",
+                    "type": "string",
+                    "xDisplay": "Straße"
+                },
+                "Stadt": {
+                    "description": "",
+                    "type": "string",
+                    "xDisplay": "Stadt"
+                },
+                "zip": {
+                    "description": "",
+                    "type": "string",
+                    "xDisplay": "Postleitzahl"
+                },
+                "country": {
+                    "description": "",
+                    "type": "string",
+                    "xDisplay": "Land"
+                }
+            },
+            "xDisplay": "Addresse"
         }
     },
     "required": [

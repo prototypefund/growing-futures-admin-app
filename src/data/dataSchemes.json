@@ -18,5 +18,11 @@
         "schemaName": "depots",
         "schemaUrl": "someUrl",
         "baseUrl": "someUrl"
+    },
+    {
+        "schemaName": "category",
+        "schemaUrl": "someUrl",
+        "baseUrl": "someUrl"
     }
+
 ]
