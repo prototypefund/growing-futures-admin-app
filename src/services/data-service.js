@@ -4,20 +4,16 @@ import depots from '@/data/mock-data/depots.json'
 import users from '@/data/mock-data/users.json'
 import categories from '@/data/mock-data/categories.json'
 
-export function getData(spec){
+export async function getData(spec){
   console.log("Loading data for schema " + spec.schemaName)
-  switch (spec.schemaName) {
-    case 'products':
-      return products
-    case 'category':
-      return categories
-    case 'shareTypes':
-      return shareTypes
-    case 'depots':
-      return depots
-    case 'users':
-      return users
-    default:
-      return []
-  }
+  if (spec.schema) {
+    let url = process.env.VUE_APP_SCHEMA_API_ROOT + "/mock-data/" + spec.schemaName + ".json"
+    let ret = await fetch(url, {headers: { "Accept": "application/json" },
+                credentials: 'omit', 
+                mode: 'cors'})
+    let json =  await ret.json()
+    console.dir(json)
+    return json
+    }
+  return []
 }

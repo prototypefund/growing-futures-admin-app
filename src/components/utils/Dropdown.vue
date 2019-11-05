@@ -87,7 +87,7 @@ export default {
     border-radius: 0px 0px 5px 5px;
   }
 
-  &:nth-child(2) {
+  &:nth-child(even) {
     background-color: #ebebeb;
   }
 

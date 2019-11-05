@@ -1,28 +1,27 @@
 [
     {
         "schemaName": "products",
-        "schemaUrl": "./vegetableSchema.json",
+        "schemaUrl": "/schemas/productSchema.json",
         "baseUrl": "someUrl"
     },
     {
         "schemaName": "users",
-        "schemaUrl": "someUrl",
+        "schemaUrl": "/schemas/userSchema.json",
         "baseUrl": "someUrl"
     },
     {
         "schemaName": "shareTypes",
-        "schemaUrl": "someUrl",
+        "schemaUrl": "/schemas/shareTypeSchema.json",
         "baseUrl": "someUrl"
     },
     {
         "schemaName": "depots",
-        "schemaUrl": "someUrl",
+        "schemaUrl": "/schemas/depotSchema.json",
         "baseUrl": "someUrl"
     },
     {
-        "schemaName": "category",
-        "schemaUrl": "someUrl",
+        "schemaName": "categories",
+        "schemaUrl": "/schemas/categoriesSchema.json",
         "baseUrl": "someUrl"
     }
-
 ]

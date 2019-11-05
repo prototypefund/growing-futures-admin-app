@@ -4,45 +4,44 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 import dataSchemes from '@/data/dataSchemes.json'
+import { getData } from '@/services/data-service.js'
 
 export default new Vuex.Store({
   state: {
     dataSchemes: dataSchemes,
-    data: null
+    data: {}
   },
   mutations: {
+    loadData(state, loadConfig){
+      Vue.set(state.data, loadConfig.spec.schemaName, loadConfig.data)
+    }
   },
   actions: {
-    loadInitialDataFromDatabase() {
-      //do things
+    loadForSpec(context, spec) {
+        if (!this.getters.data[spec.schemaName]){
+        getData(spec).then(data => {
+          this.commit('loadData', {spec: spec, data: data} )
+        })
+      }
     }
   },
   getters: {
     schemas: state => {
-      var stuff = state.dataSchemes.forEach(schema => {
-        console.dir(schema.schemaName)
-        switch (schema.schemaName) {
-          case "products":
-            schema.schema = require("./data/schemas/productSchema.json")
-            break
-           case "users":
-            schema.schema = require("./data/schemas/userSchema.json")
-            break;
-           case "shareTypes":
-            schema.schema = require("./data/schemas/shareTypeSchema.json")
-            break;
-           case "depots":
-            schema.schema = require("./data/schemas/depotSchema.json")
-            break;
-           case "category":
-            schema.schema = require("./data/schemas/categoriesSchema.json")
-            break;
-          default:
-            schema.schema = {}
-        }
-      })
-      console.dir(stuff)
+      state.dataSchemes.forEach(schema => {
+        let url = process.env.VUE_APP_SCHEMA_API_ROOT + schema.schemaUrl
+        fetch(url, {headers: { "Accept": "application/json" },
+                            credentials: 'omit', 
+                            mode: 'cors'})
+                        .then(response => response.json())
+                        .then(function(json) { 
+                          schema.schema = json
+                        })
+       }
+      )
       return state.dataSchemes
+    },
+    data: state => {
+      return state.data;
     }
   }
 })
