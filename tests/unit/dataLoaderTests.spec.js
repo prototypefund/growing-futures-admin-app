@@ -2,7 +2,8 @@ import { loadData, loadForSpec } from '@/utils/DataLoader.js'
 import specs from '@/data/dataSchemes.json'
 
 describe('should return an empty speclist for each spec', () => {
-  var res = loadData(specs)
+  var res
+  loadData(specs).then(p => res = p)
   it('should return four elements', () => {
     expect(res).toHaveLength(4)
   })

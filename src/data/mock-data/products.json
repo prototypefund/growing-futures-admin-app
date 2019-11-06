@@ -1,762 +1,855 @@
 [
     {
         "name": "Bataviasalat",
-        "image": "/path/to/image",
         "categories": [
             "salat"
         ],
+        "image": "/path/to/image",
+        "uid": "product0001",
         "unit": "p"
     },
     {
         "name": "Eichblattsalat",
-        "image": "/path/to/image",
         "categories": [
             "salat"
         ],
+        "image": "/path/to/image",
+        "uid": "product0002",
         "unit": "p"
     },
     {
         "name": "Salatkopf (Mischung)",
-        "image": "/path/to/image",
         "categories": [
             "salat"
         ],
+        "image": "/path/to/image",
+        "uid": "product0003",
         "unit": "p"
     },
     {
         "name": "Eisbergsalat",
-        "image": "/path/to/image",
         "categories": [
             "salat"
         ],
+        "image": "/path/to/image",
+        "uid": "product0004",
         "unit": "p"
     },
     {
         "name": "Endiviensalat",
-        "image": "/path/to/image",
         "categories": [
             "salat"
         ],
+        "image": "/path/to/image",
+        "uid": "product0005",
         "unit": "p"
     },
     {
         "name": "Feldsalat",
-        "image": "/path/to/image",
         "categories": [
             "salat"
         ],
+        "image": "/path/to/image",
+        "uid": "product0006",
         "unit": "p"
     },
     {
         "name": "Kopfsalat",
-        "image": "/path/to/image",
         "categories": [
             "salat"
         ],
+        "image": "/path/to/image",
+        "uid": "product0007",
         "unit": "p"
     },
     {
         "name": "Lollo Bionda",
-        "image": "/path/to/image",
         "categories": [
             "salat"
         ],
+        "image": "/path/to/image",
+        "uid": "product0008",
         "unit": "p"
     },
     {
         "name": "Lollo Rosso",
-        "image": "/path/to/image",
         "categories": [
             "salat"
         ],
+        "image": "/path/to/image",
+        "uid": "product0009",
         "unit": "p"
     },
     {
         "name": "Zuckerhut",
-        "image": "/path/to/image",
         "categories": [
             "salat",
             "blattgemuse"
         ],
+        "image": "/path/to/image",
+        "uid": "product0010",
         "unit": "p"
     },
     {
-        "name": "Chicor\u00e9e",
-        "image": "/path/to/image",
+        "name": "Chicorée",
         "categories": [
             "salat",
             "blattgemuse"
         ],
+        "image": "/path/to/image",
+        "uid": "product0011",
         "unit": "p"
     },
     {
         "name": "Radicchio",
-        "image": "/path/to/image",
         "categories": [
             "salat",
             "blattgemuse"
         ],
+        "image": "/path/to/image",
+        "uid": "product0012",
         "unit": "p"
     },
     {
         "name": "Mangold",
-        "image": "",
         "categories": [
             "salat",
             "blattgemuese"
         ],
+        "image": "",
+        "uid": "product0013",
         "unit": "g"
     },
     {
         "name": "Spinat",
-        "image": "",
         "categories": [
             "salat",
             "blattgemuese"
         ],
+        "image": "",
+        "uid": "product0014",
         "unit": "g"
     },
     {
         "name": "Chinakohl",
-        "image": "",
         "categories": [
             "salat",
             "blattgemuese",
             "kohl"
         ],
+        "image": "",
+        "uid": "product0015",
         "unit": "g"
     },
     {
-        "name": "Gr\u00fcnkohl",
-        "image": "",
+        "name": "Grünkohl",
         "categories": [
             "blattgemuese",
             "kohl"
         ],
+        "image": "",
+        "uid": "product0016",
         "unit": "g"
     },
     {
         "name": "Tomate",
-        "image": "",
         "categories": [
             "fruchtgemuese"
         ],
+        "image": "",
+        "uid": "product0017",
         "unit": "g"
     },
     {
         "name": "Mini-Tomate",
-        "image": "",
         "categories": [
             "fruchtgemuese"
         ],
+        "image": "",
+        "uid": "product0018",
         "unit": "g"
     },
     {
         "name": "Zucchini",
-        "image": "",
         "categories": [
             "fruchtgemuese"
         ],
+        "image": "",
+        "uid": "product0019",
         "unit": "g"
     },
     {
         "name": "Paprika",
-        "image": "",
         "categories": [
             "fruchtgemuese"
         ],
+        "image": "",
+        "uid": "product0020",
         "unit": "g"
     },
     {
         "name": "Pepperoni",
-        "image": "",
         "categories": [
             "fruchtgemuese"
         ],
+        "image": "",
+        "uid": "product0021",
         "unit": "g"
     },
     {
         "name": "Schlangengurke",
-        "image": "",
         "categories": [
             "fruchtgemuese"
         ],
+        "image": "",
+        "uid": "product0022",
         "unit": "p"
     },
     {
         "name": "Blumenkohl",
-        "image": "",
         "categories": [
             "kohl"
         ],
+        "image": "",
+        "uid": "product0023",
         "unit": "p"
     },
     {
         "name": "Broccoli",
-        "image": "",
         "categories": [
             "kohl"
         ],
+        "image": "",
+        "uid": "product0024",
         "unit": "p"
     },
     {
-        "name": "Mair\u00fcbe",
-        "image": "",
+        "name": "Mairübe",
         "categories": [
             "kohl",
             "wurzelgemuese"
         ],
+        "image": "",
+        "uid": "product0025",
         "unit": "p"
     },
     {
         "name": "Romanesco",
-        "image": "",
         "categories": [
             "kohl"
         ],
+        "image": "",
+        "uid": "product0026",
         "unit": "p"
     },
     {
         "name": "Rosenkohl",
-        "image": "",
         "categories": [
             "kohl"
         ],
+        "image": "",
+        "uid": "product0027",
         "unit": "p"
     },
     {
         "name": "Rotkohl",
-        "image": "",
         "categories": [
             "kohl"
         ],
+        "image": "",
+        "uid": "product0028",
         "unit": "p"
     },
     {
         "name": "Spitzkohl",
-        "image": "",
         "categories": [
             "kohl"
         ],
+        "image": "",
+        "uid": "product0029",
         "unit": "p"
     },
     {
-        "name": "Steckr\u00fcbe",
-        "image": "",
+        "name": "Steckrübe",
         "categories": [
             "kohl",
-            "wurzelgem\u00fcse"
+            "wurzelgemüse"
         ],
+        "image": "",
+        "uid": "product0030",
         "unit": "p"
     },
     {
-        "name": "Wei\u00dfkohl",
-        "image": "",
+        "name": "Weißkohl",
         "categories": [
             "kohl"
         ],
+        "image": "",
+        "uid": "product0031",
         "unit": "p"
     },
     {
         "name": "Wirsing",
-        "image": "",
         "categories": [
             "kohl"
         ],
+        "image": "",
+        "uid": "product0032",
         "unit": "p"
     },
     {
-        "name": "Butternutk\u00fcrbis",
-        "image": "",
+        "name": "Butternutkürbis",
         "categories": [
             "kuerbis",
             "fruchtgemuese"
         ],
+        "image": "",
+        "uid": "product0033",
         "unit": "p"
     },
     {
         "name": "Hokkaido",
-        "image": "",
         "categories": [
             "kuerbis",
             "fruchtgemuese"
         ],
+        "image": "",
+        "uid": "product0034",
         "unit": "p"
     },
     {
-        "name": "Riesenk\u00fcrbis",
-        "image": "",
+        "name": "Riesenkürbis",
         "categories": [
             "kuerbis",
             "fruchtgemuese"
         ],
+        "image": "",
+        "uid": "product0035",
         "unit": "p"
     },
     {
         "name": "Aubergine",
-        "image": "",
         "categories": [
             "fruchtgemuese"
         ],
+        "image": "",
+        "uid": "product0036",
         "unit": "p"
     },
     {
         "name": "Minigurken",
-        "image": "",
         "categories": [
             "fruchtgemuese"
         ],
+        "image": "",
+        "uid": "product0037",
         "unit": "g"
     },
     {
         "name": "Einlegegurken",
-        "image": "",
         "categories": [
             "fruchtgemuese"
         ],
+        "image": "",
+        "uid": "product0038",
         "unit": "g"
     },
     {
         "name": "Wassermelone",
-        "image": "",
         "categories": [
             "fruchtgemuese"
         ],
+        "image": "",
+        "uid": "product0039",
         "unit": "p"
     },
     {
         "name": "Zuckermelone",
-        "image": "",
         "categories": [
             "fruchtgemuese"
         ],
+        "image": "",
+        "uid": "product0040",
         "unit": "p"
     },
     {
         "name": "Zuckermais",
-        "image": "",
         "categories": [
             "fruchtgemuese",
             "getreide"
         ],
+        "image": "",
+        "uid": "product0041",
         "unit": "p"
     },
     {
         "name": "Karotte",
-        "image": "",
         "categories": [
             "wurzelgemuese"
         ],
+        "image": "",
+        "uid": "product0042",
         "unit": "p"
     },
     {
         "name": "Kartoffel",
-        "image": "",
         "categories": [
             "wurzelgemuese"
         ],
+        "image": "",
+        "uid": "product0043",
         "unit": "p"
     },
     {
         "name": "Pastinake",
-        "image": "",
         "categories": [
             "wurzelgemuese"
         ],
+        "image": "",
+        "uid": "product0044",
         "unit": "g"
     },
     {
         "name": "Radieschen",
-        "image": "",
         "categories": [
             "wurzelgemuese"
         ],
+        "image": "",
+        "uid": "product0045",
         "unit": "p"
     },
     {
-        "name": "Wei\u00dfer Rettich",
-        "image": "",
+        "name": "Weißer Rettich",
         "categories": [
             "wurzelgemuese"
         ],
+        "image": "",
+        "uid": "product0045",
         "unit": "p"
     },
     {
         "name": "Schwarzer Rettich",
-        "image": "",
         "categories": [
             "wurzelgemuese"
         ],
+        "image": "",
+        "uid": "product0046",
         "unit": "p"
     },
     {
         "name": "Sellerie",
-        "image": "",
         "categories": [
             "wurzelgemuese"
         ],
+        "image": "",
+        "uid": "product0047",
         "unit": "p"
     },
     {
-        "name": "S\u00fc\u00dfkartoffel",
-        "image": "",
+        "name": "Süßkartoffel",
         "categories": [
             "wurzelgemuese"
         ],
+        "image": "",
+        "uid": "product0048",
         "unit": "p"
     },
     {
         "name": "Topinambur",
-        "image": "",
         "categories": [
             "wurzelgemuese"
         ],
+        "image": "",
+        "uid": "product0049",
         "unit": "p"
     },
     {
         "name": "Petersilienwurzel",
-        "image": "",
         "categories": [
             "wurzelgemuese"
         ],
+        "image": "",
+        "uid": "product0050",
         "unit": "p"
     },
     {
         "name": "Schwarzwurzel",
-        "image": "",
         "categories": [
             "wurzelgemuese"
         ],
+        "image": "",
+        "uid": "product0051",
         "unit": "p"
     },
     {
-        "name": "Zuckerr\u00fcbe",
-        "image": "",
+        "name": "Zuckerrübe",
         "categories": [
             "wurzelgemuese"
         ],
+        "image": "",
+        "uid": "product0052",
         "unit": "p"
     },
     {
         "name": "Haferwurzel",
-        "image": "",
         "categories": [
             "wurzelgemuese"
         ],
+        "image": "",
+        "uid": "product0053",
         "unit": "p"
     },
     {
-        "name": "B\u00e4rlauch",
-        "image": "",
+        "name": "Bärlauch",
         "categories": [
             "zwiebeln"
         ],
+        "image": "",
+        "uid": "product0054",
         "unit": "p"
     },
     {
         "name": "Knoblauch",
-        "image": "",
         "categories": [
             "zwiebeln"
         ],
+        "image": "",
+        "uid": "product0055",
         "unit": "p"
     },
     {
         "name": "Lauch",
-        "image": "",
         "categories": [
             "zwiebeln"
         ],
+        "image": "",
+        "uid": "product0056",
         "unit": "p"
     },
     {
-        "name": "Gem\u00fcsezwiebel",
-        "image": "",
+        "name": "Gemüsezwiebel",
         "categories": [
             "zwiebeln"
         ],
+        "image": "",
+        "uid": "product0057",
         "unit": "p"
     },
     {
-        "name": "Zwiebel (wei\u00df)",
-        "image": "",
+        "name": "Zwiebel (weiß)",
         "categories": [
             "zwiebeln"
         ],
+        "image": "",
+        "uid": "product0058",
         "unit": "p"
     },
     {
         "name": "Zwiebel (rot)",
-        "image": "",
         "categories": [
             "zwiebeln"
         ],
+        "image": "",
+        "uid": "product0059",
         "unit": "p"
     },
     {
-        "name": "Fr\u00fchlingszwiebel",
-        "image": "",
+        "name": "Frühlingszwiebel",
         "categories": [
             "zwiebeln"
         ],
+        "image": "",
+        "uid": "product0060",
         "unit": "p"
     },
     {
         "name": "Schalotten",
-        "image": "",
         "categories": [
             "zwiebeln"
         ],
+        "image": "",
+        "uid": "product0061",
         "unit": "p"
     },
     {
         "name": "Zwiebel (gelb)",
-        "image": "",
         "categories": [
             "zwiebeln"
         ],
+        "image": "",
+        "uid": "product0062",
         "unit": "p"
     },
     {
         "name": "Stangenbohne",
-        "image": "",
         "categories": [
             "huelsenfruechte"
         ],
+        "image": "",
+        "uid": "product0063",
         "unit": "p"
     },
     {
         "name": "Buschbohne",
-        "image": "",
         "categories": [
             "huelsenfruechte"
         ],
+        "image": "",
+        "uid": "product0064",
         "unit": "p"
     },
     {
         "name": "Schlangenbohne",
-        "image": "",
         "categories": [
             "huelsenfruechte"
         ],
+        "image": "",
+        "uid": "product0065",
         "unit": "p"
     },
     {
         "name": "Zuckererbsten",
-        "image": "",
         "categories": [
             "huelsenfruechte"
         ],
+        "image": "",
+        "uid": "product0066",
         "unit": "p"
     },
     {
         "name": "Markerbsen",
-        "image": "",
         "categories": [
             "huelsenfruechte"
         ],
+        "image": "",
+        "uid": "product0067",
         "unit": "p"
     },
     {
         "name": "Edamame",
-        "image": "",
         "categories": [
             "huelsenfruechte"
         ],
+        "image": "",
+        "uid": "product0068",
         "unit": "p"
     },
     {
-        "name": "\u00c4pfel",
-        "image": "",
+        "name": "Äpfel",
         "categories": [
             "obst"
         ],
+        "image": "",
+        "uid": "product0069",
         "unit": "p"
     },
     {
         "name": "Birnen",
-        "image": "",
         "categories": [
             "obst"
         ],
+        "image": "",
+        "uid": "product0070",
         "unit": "p"
     },
     {
         "name": "Sauerkirsche",
-        "image": "",
         "categories": [
             "obst"
         ],
+        "image": "",
+        "uid": "product0071",
         "unit": "p"
     },
     {
         "name": "Mirabelle",
-        "image": "",
         "categories": [
             "obst"
         ],
+        "image": "",
+        "uid": "product0072",
         "unit": "p"
     },
     {
         "name": "Quitten",
-        "image": "",
         "categories": [
             "obst"
         ],
+        "image": "",
+        "uid": "product0073",
         "unit": "p"
     },
     {
         "name": "Pflaumen",
-        "image": "",
         "categories": [
             "obst"
         ],
+        "image": "",
+        "uid": "product0074",
         "unit": "p"
     },
     {
         "name": "Kiwi",
-        "image": "",
         "categories": [
             "obst",
             "beeren"
         ],
+        "image": "",
+        "uid": "product0075",
         "unit": "p"
     },
     {
         "name": "Pfirsich",
-        "image": "",
         "categories": [
             "obst"
         ],
+        "image": "",
+        "uid": "product0076",
         "unit": "p"
     },
     {
         "name": "Joahnnisbeeren (rot)",
-        "image": "",
         "categories": [
             "beeren"
         ],
+        "image": "",
+        "uid": "product0077",
         "unit": "p"
     },
     {
         "name": "Joahnnisbeeren (schwarz)",
-        "image": "",
         "categories": [
             "beeren"
         ],
+        "image": "",
+        "uid": "product0078",
         "unit": "p"
     },
     {
-        "name": "Joahnnisbeeren (wei\u00df)",
-        "image": "",
+        "name": "Joahnnisbeeren (weiß)",
         "categories": [
             "beeren"
         ],
+        "image": "",
+        "uid": "product0079",
         "unit": "p"
     },
     {
         "name": "Stachelbeeren",
-        "image": "",
         "categories": [
             "beeren"
         ],
+        "image": "",
+        "uid": "product0080",
         "unit": "p"
     },
     {
         "name": "Himbeeren",
-        "image": "",
         "categories": [
             "beeren"
         ],
+        "image": "",
+        "uid": "product0081",
         "unit": "p"
     },
     {
         "name": "Brombeeren",
-        "image": "",
         "categories": [
             "beeren"
         ],
+        "image": "",
+        "uid": "product0082",
         "unit": "p"
     },
     {
         "name": "Heidelbeeren",
-        "image": "",
         "categories": [
             "beeren"
         ],
+        "image": "",
+        "uid": "product0083",
         "unit": "p"
     },
     {
         "name": "Aroniabeeren",
-        "image": "",
         "categories": [
             "beeren"
         ],
+        "image": "",
+        "uid": "product0084",
         "unit": "p"
     },
     {
         "name": "Gojibeeren",
-        "image": "",
         "categories": [
             "beeren"
         ],
+        "image": "",
+        "uid": "product0085",
         "unit": "p"
     },
     {
         "name": "Schlehen",
-        "image": "",
         "categories": [
             "beeren"
         ],
+        "image": "",
+        "uid": "product0086",
         "unit": "p"
     },
     {
         "name": "Erbeeren",
-        "image": "",
         "categories": [
             "beeren"
         ],
+        "image": "",
+        "uid": "product0087",
         "unit": "p"
     },
     {
         "name": "Tafeltrauben",
-        "image": "",
         "categories": [
             "beeren"
         ],
+        "image": "",
+        "uid": "product0088",
         "unit": "p"
     },
     {
-        "name": "Haseln\u00fcsse",
-        "image": "",
+        "name": "Haselnüsse",
         "categories": [
             "nuesse"
         ],
+        "image": "",
+        "uid": "product0089",
         "unit": "p"
     },
     {
-        "name": "Waln\u00fcsse",
-        "image": "",
+        "name": "Walnüsse",
         "categories": [
             "nuesse"
         ],
+        "image": "",
+        "uid": "product0090",
         "unit": "p"
     },
     {
         "name": "Esskastanien",
-        "image": "",
         "categories": [
             "nuesse"
         ],
+        "image": "",
+        "uid": "product0091",
         "unit": "p"
     },
     {
-        "name": "Erdn\u00fcsse",
-        "image": "",
+        "name": "Erdnüsse",
         "categories": [
             "huelsenfruechte",
             "nuesse"
         ],
+        "image": "",
+        "uid": "product0092",
         "unit": "p"
     }
 ]

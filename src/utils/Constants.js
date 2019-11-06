@@ -1,4 +1,4 @@
-const WEIGHT = "k"
+const WEIGHT = "g"
 const PIECE = "p"
 
 export default {

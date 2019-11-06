@@ -1,34 +1,37 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "product",
     "description": "A product that can be added to a CSA delivery",
-    "type": "object",
     "properties": {
-        "name": {
-            "description": "The name of the product",
-            "type": "string",
-            "xDisplay": "Name"
+        "categories": {
+            "description": "A url to an icon for this vegetable 256x256",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true,
+            "xDisplay": "Categories",
+            "xRef": "categories",
+            "xType": "multiSelect"
         },
         "image": {
             "description": "A url to an icon for this vegetable 256x256",
             "type": "string",
             "xDisplay": "Image"
         },
-        "categories": {
-            "description": "A url to an icon for this vegetable 256x256",
-            "type": "array",
-            "items": {
-                "type": "string"
-            },
-            "minItems": 1,
-            "uniqueItems": true,
-            "xDisplay": "Categories",
-            "xRef": "category",
-            "xType": "multiSelect"
+        "name": {
+            "description": "The name of the product",
+            "type": "string",
+            "xDisplay": "Name"
+        },
+        "uid": {
+            "description": "A unique ID for this item",
+            "type": "string",
+            "xDisplay": "UID"
         },
         "unit": {
-            "type": "string",
             "description": "The default unit used for this product",
+            "type": "string",
             "xDisplay": "Unit"
         }
     },
@@ -36,5 +39,7 @@
         "name",
         "categories",
         "unit"
-    ]
+    ],
+    "title": "product",
+    "type": "object"
 }

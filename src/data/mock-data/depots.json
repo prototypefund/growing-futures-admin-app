@@ -1,20 +1,22 @@
 [
     {
-        "name": "Weiden",
         "address": {
-            "street": "Rehb\u00fchlstra\u00dfe 134",
-            "zip": "92637",
             "city": "Weiden",
-            "country": "Germany"
-        }
+            "country": "Germany",
+            "street": "Rehbühlstraße 134",
+            "zip": "92637"
+        },
+        "name": "Weiden",
+        "uid": "depot0001"
     },
     {
-        "name": "Krummennaab",
         "address": {
-            "street": "Stockau 4",
-            "zip": "02930",
             "city": "Krummennaab",
-            "country": "Germany"
-        }
+            "country": "Germany",
+            "street": "Stockau 4",
+            "zip": "02930"
+        },
+        "name": "Krummennaab",
+        "uid": "depot0002"
     }
 ]

@@ -26,27 +26,22 @@
 </template>
 
 <script>
-import categories from '@/data/categories.json'
 import { getData } from '@/services/data-service.js'
 
 export default {
   name: 'ProductSelection',
-  mounted() {
-    this.items = getData({"schemaName": "products"})
-  },
   data() {
     return {
       searchTerm: '',
       items: [],
-      categories: categories,
-      manuallySelectedItem: categories,
+      manuallySelectedItem: this.$store.getters.data.categories,
       lastSelection: null,
       selecteItem: {},
     }
   },
   methods: {
     select(selection) {
-      let items = this.items.filter(item => item.categories.includes(selection.id))
+      let items = this.products.filter(item => item.categories.includes(selection.uid))
       console.dir(items)
       if (items.length > 0)
       {
@@ -70,6 +65,12 @@ export default {
     }
   },
   computed: {
+    products: function() {
+      return this.$store.getters.products
+    },
+    categories: function() {
+      return this.$store.getters.categories
+    },
     displayedItems: function () {
       if (this.searchTerm == ''){
         return this.manuallySelectedItem;

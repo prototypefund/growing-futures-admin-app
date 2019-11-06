@@ -1,38 +1,50 @@
 [
-  {
-    "name": "Salat"
-  },
-  {
-    "name": "Zwiebeln"
-  },
-  {
-    "name": "Blattgemüse"
-  },
-  {
-    "name": "Fruchtgemüse"
-  },
-  {
-    "name": "Kohl"
-  },
-  {
-    "name": "Kürbis"
-  },
-  {
-    "name": "Getreide"
-  },
-  {
-    "name": "Wurzeln & Knollen"
-  },
-  {
-    "name": "Erbsen & Bohnen"
-  },
-  {
-    "name": "Obst"
-  },
-  {
-    "name": "Beeren"
-  },
-  {
-    "name": "Nüsse"
-  }
+    {
+        "name": "Salat",
+        "uid": "salat"
+    },
+    {
+        "name": "Zwiebeln",
+        "uid": "zwiebeln"
+    },
+    {
+        "name": "Blattgemüse",
+        "uid": "blattgemuse"
+    },
+    {
+        "name": "Fruchtgemüse",
+        "uid": "fruchtgemuese"
+    },
+    {
+        "name": "Kohl",
+        "uid": "kohl"
+    },
+    {
+        "name": "Kürbis",
+        "uid": "kuerbis"
+    },
+    {
+        "name": "Getreide",
+        "uid": "getreide"
+    },
+    {
+        "name": "Wurzeln & Knollen",
+        "uid": "wurzelemuese"
+    },
+    {
+        "name": "Erbsen & Bohnen",
+        "uid": "huelsenfruechte"
+    },
+    {
+        "name": "Obst",
+        "uid": "obst"
+    },
+    {
+        "name": "Beeren",
+        "uid": "beeren"
+    },
+    {
+        "name": "Nüsse",
+        "uid": "nuesse"
+    }
 ]

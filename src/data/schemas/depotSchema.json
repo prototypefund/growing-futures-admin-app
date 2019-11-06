@@ -4,6 +4,11 @@
     "description": "A depot",
     "type": "object",
     "properties": {
+      "uid": {
+            "description": "A unique ID for this item",
+            "type": "string",
+            "xDisplay": "UID"
+        },
         "name": {
             "description": "The name of the Depot",
             "type": "string",

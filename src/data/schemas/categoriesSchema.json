@@ -1,21 +1,27 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "category",
     "description": "A product category",
-    "type": "object",
     "properties": {
+        "description": {
+            "description": "The description",
+            "type": "string",
+            "xDisplay": "Description"
+        },
         "name": {
             "description": "The full name of the product",
             "type": "string",
             "xDisplay": "Name"
         },
-        "description": {
+        "uid": {
+            "description": "A unique ID for this item",
             "type": "string",
-            "description": "The description",
-            "xDisplay": "Description"
+            "xDisplay": "UID"
         }
     },
     "required": [
-        "name"
-    ]
+        "name",
+        "uid"
+    ],
+    "title": "category",
+    "type": "object"
 }

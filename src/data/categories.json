@@ -1,62 +1,62 @@
 [
     {
+        "image": "/path/to/image",
         "name": "Salat",
-        "id": "salat",
-        "image": "/path/to/image"
+        "uid": "salat"
     },
     {
+        "image": "/path/to/image",
         "name": "Zwiebeln",
-        "id": "zwiebeln",
-        "image": "/path/to/image"
+        "uid": "zwiebeln"
     },
     {
-        "name": "Blattgem\u00fcse",
-        "id": "blattgemuese",
-        "image": "path/to/image"
+        "image": "path/to/image",
+        "name": "Blattgemüse",
+        "uid": "blattgemuese"
     },
     {
-        "name": "Fruchtgem\u00fcse",
-        "id": "fruchtgemuese",
-        "image": "path/to/image"
+        "image": "path/to/image",
+        "name": "Fruchtgemüse",
+        "uid": "fruchtgemuese"
     },
     {
+        "image": "path/to/image",
         "name": "Kohl",
-        "id": "kohl",
-        "image": "path/to/image"
+        "uid": "kohl"
     },
     {
-        "name": "K\u00fcrbis",
-        "id": "kuerbis",
-        "image": "path/to/image"
+        "image": "path/to/image",
+        "name": "Kürbis",
+        "uid": "kuerbis"
     },
     {
+        "image": "path/to/image",
         "name": "Getreide",
-        "id": "getreide",
-        "image": "path/to/image"
+        "uid": "getreide"
     },
     {
+        "image": "path/to/image",
         "name": "Wurzeln & Knollen",
-        "id": "wurzelgemuese",
-        "image": "path/to/image"
+        "uid": "wurzelgemuese"
     },
     {
+        "image": "path/to/image",
         "name": "Erbsen & Bohnen",
-        "id": "huelsenfruechte",
-        "image": "path/to/image"
+        "uid": "huelsenfruechte"
     },
     {
+        "image": "path/to/image",
         "name": "Obst",
-        "id": "obst",
-        "image": "path/to/image"
+        "uid": "obst"
     },
     {
+        "image": "path/to/image",
         "name": "Beeren",
-        "id": "beeren",
-        "image": "path/to/image"
+        "uid": "beeren"
     },
     {
-        "name": "N\u00fcsse",
-        "id": "nuesse",
-        "image": "path/to/image"
+        "image": "path/to/image",
+        "name": "Nüsse",
+        "uid": "nuesse"
     }
 ]

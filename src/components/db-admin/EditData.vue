@@ -49,7 +49,7 @@ export default {
     },
     getReferencedData(name){
       let schema = this.loadedSchema.properties[name]
-      let data = getData({'schemaName': schema.xRef})
+      let data = this.$store.getters.data[schema.xRef]
       return data
     },
     getSubschema(p){

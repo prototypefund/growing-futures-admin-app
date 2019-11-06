@@ -1,27 +1,30 @@
 [
-  {
-    "username": "johndoe",
-    "name": "John Doe",
-    "shareType": "small",
-    "depot": "Krummennaab"
-  },
-  {
-    "username": "aa",
-    "name": "Alex Awesome",
-    "shareType": "big",
-    "depot": "Weiden"
-  },
-  {
-    "username": "jens",
-    "name": "Udo Oinki",
-    "shareType": "big",
-    "depot": "Krummennaab"
-  },
-  {
-    "username": "boris",
-    "name": "Da Boris",
-    "shareType": "small",
-    "depot": "Weiden"
-  }
-
+    {
+        "name": "John Doe",
+        "depot": "Krummennaab",
+        "shareType": "small",
+        "uid": "user0001",
+        "username": "johndoe"
+    },
+    {
+        "name": "Alex Awesome",
+        "depot": "Weiden",
+        "shareType": "big",
+        "uid": "user0002",
+        "username": "aa"
+    },
+    {
+        "name": "Udo Oinki",
+        "depot": "Krummennaab",
+        "shareType": "big",
+        "uid": "user0003",
+        "username": "jens"
+    },
+    {
+        "name": "Da Boris",
+        "depot": "Weiden",
+        "shareType": "small",
+        "uid": "user0004",
+        "username": "boris"
+    }
 ]

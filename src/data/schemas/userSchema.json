@@ -1,32 +1,35 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "user",
     "description": "A user",
-    "type": "object",
     "properties": {
-        "username": {
-            "description": "The username of the user",
+        "depot": {
+            "description": "The default depot used for this user",
             "type": "string",
-            "xDisplay": "Benutzername"
+            "xDisplay": "Depot",
+            "xRef": "depots",
+            "xType": "singleSelect"
         },
         "name": {
             "description": "The full name of the user",
             "type": "string",
             "xDisplay": "Name"
         },
-        "depot": {
-            "type": "string",
-            "description": "The default depot used for this user",
-            "xDisplay": "Depot",
-            "xType": "singleSelect",
-            "xRef": "depots"
-        },
         "shareType": {
-            "type": "string",
             "description": "The default depot used for this user",
+            "type": "string",
             "xDisplay": "Anteilstyp",
-            "xType": "singleSelect",
-            "xRef": "shareTypes"
+            "xRef": "shareTypes",
+            "xType": "singleSelect"
+        },
+        "uid": {
+            "description": "A unique ID for this item",
+            "type": "string",
+            "xDisplay": "UID"
+        },
+        "username": {
+            "description": "The username of the user",
+            "type": "string",
+            "xDisplay": "Benutzername"
         }
     },
     "required": [
@@ -34,5 +37,7 @@
         "username",
         "depot",
         "shareType"
-    ]
+    ],
+    "title": "user",
+    "type": "object"
 }

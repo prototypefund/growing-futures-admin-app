@@ -8,13 +8,13 @@
 
     <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
       <thead>
-        <th v-for="attr in attributes">
+        <th v-for="attr in attributes" :key="attr">
             {{ selectedSchema.schema.properties[attr].xDisplay }}
         </th>
       </thead>
       <tbody>
-        <tr v-for="item in loadedItems" @click="selectItem(item)">
-          <td v-for="key in attributes">
+        <tr v-for="item in loadedItems" :key="item.name" @click="selectItem(item)">
+          <td v-for="key in attributes" :key="key">
             {{ item[key] | displayNicely }}
           </td>
         </tr>
@@ -30,7 +30,6 @@
 <script>
 import DataModifier from '@/components/db-admin/DataModifier.vue'
 import Dropdown from '@/components/utils/Dropdown.vue'
-import { getData } from '@/services/data-service.js'
 
 export default {
   name: 'DataAdministration',
@@ -46,7 +45,6 @@ export default {
   },
   methods: {
     save(item){
-      //return this.$store.getters.schemas
       this.selectedItem = null
     },
     select(selection){
@@ -87,9 +85,7 @@ export default {
     },
     selectedSchema() {
       if (this.selection){
-        let schema = this.schemas.find(s => s.schemaName == this.selection) 
-        this.$store.dispatch("loadForSpec", schema)
-        return schema
+        return this.schemas.find(s => s.schemaName == this.selection) 
       }
       return {}
     }

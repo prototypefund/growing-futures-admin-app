@@ -9,8 +9,12 @@ export default {
   name: 'App',
   components: {
   },
-  created() {
-
+  async created() {
+    await this.$store.dispatch('loadSchemaDefinitions', {})
+    await this.$store.getters.schemas.forEach(schema =>
+      {
+        this.$store.dispatch('loadForSpec', schema)
+      })
   },
 }
  
