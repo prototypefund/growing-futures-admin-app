@@ -15,7 +15,8 @@
         "uid": {
             "description": "A unique ID for this item",
             "type": "string",
-            "xDisplay": "UID"
+            "xDisplay": "UID",
+            "xRestrictions": "read-only"
         }
     },
     "required": [
@@ -23,5 +24,6 @@
         "uid"
     ],
     "title": "category",
-    "type": "object"
+    "type": "object",
+    "xUidPrefix": "category"
 }

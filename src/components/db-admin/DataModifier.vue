@@ -1,7 +1,7 @@
 <template>
   <div class="data-modifier-container">
     <edit-data @update="update" :schema="schema" :data="data" />
-    <div class="button save-button">
+    <div class="button save-button" @click="save">
       Save
     </div>
   </div>
@@ -26,10 +26,23 @@ export default {
     }
   },
   methods: {
+    save()
+    {
+      if (!this.item.uid)
+      {
+        this.item.uid = this.generateUid(this.schema.xUidPrefix)
+      }
+      this.$store.dispatch('addOrUpdate', {schema: this.schema, item: this.item} ) 
+      this.$emit('close')
+    },
     update(updatedItem) {
-      console.log("DATA MODIFIER")
-      console.dir(updatedItem)
       this.item = updatedItem
+    },
+    generateUid(prefix)
+    {
+      let uuid = require("uuid");
+      let id = uuid.v4();
+      return prefix + "-" + id
     }
   }
 }

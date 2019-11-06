@@ -1,12 +1,12 @@
 <template>
-  <div class="text-input">
+  <div class="number-input">
       <input class="input" @input="$emit('update', $event.target.value)" v-model="input"/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'TextInput',
+  name: 'NumberInput',
   components: {
   },
   data () {
@@ -15,7 +15,7 @@ export default {
     }
   },
   props: {
-    defaultValue: String,
+    defaultValue: Number,
   }
 }
 </script>

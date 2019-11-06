@@ -13,7 +13,7 @@
         </th>
       </thead>
       <tbody>
-        <tr v-for="item in loadedItems" :key="item.name" @click="selectItem(item)">
+        <tr v-for="item in loadedItems" :key="item.uid" @click="selectItem(item)">
           <td v-for="key in attributes" :key="key">
             {{ item[key] | displayNicely }}
           </td>
@@ -22,7 +22,8 @@
     </table>
     <div v-if="selectedItem">
       Edit Data
-      <data-modifier :schema="selectedSchema" :data="selectedItem" @save="save"/>
+      <data-modifier :schema="selectedSchema" :data="selectedItem"
+                              @close="selectedItem = null"/>
     </div>
   </div>
 </template>
@@ -44,10 +45,8 @@ export default {
     }
   },
   methods: {
-    save(item){
-      this.selectedItem = null
-    },
     select(selection){
+      this.selectedItem = null
       this.selection = selection
     },
     selectItem(item) {
@@ -66,8 +65,7 @@ export default {
       return this.$store.getters.schemas
     },
     loadedItems () {
-      let items = this.$store.getters.data[this.selectedSchema.schemaName]
-      return items
+      return this.$store.getters.data[this.selectedSchema.schemaName]
     },
     attributes () { 
       if (!this.selectedSchema)

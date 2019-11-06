@@ -7,8 +7,7 @@
             "type": "string",
             "xDisplay": "Depot",
             "xRef": "depots",
-            "xType": "singleSelect"
-        },
+            "xType": "singleSelect"        },
         "name": {
             "description": "The full name of the user",
             "type": "string",
@@ -24,7 +23,8 @@
         "uid": {
             "description": "A unique ID for this item",
             "type": "string",
-            "xDisplay": "UID"
+            "xDisplay": "UID",
+            "xRestrictions": "read-only"
         },
         "username": {
             "description": "The username of the user",
@@ -39,5 +39,6 @@
         "shareType"
     ],
     "title": "user",
-    "type": "object"
+    "type": "object",
+    "xUidPrefix": "user"
 }

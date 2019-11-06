@@ -27,7 +27,8 @@
         "uid": {
             "description": "A unique ID for this item",
             "type": "string",
-            "xDisplay": "UID"
+            "xDisplay": "UID",
+            "xRestrictions": "read-only"
         },
         "unit": {
             "description": "The default unit used for this product",
@@ -41,5 +42,6 @@
         "unit"
     ],
     "title": "product",
-    "type": "object"
+    "type": "object",
+    "xUidPrefix": "product"
 }

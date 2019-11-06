@@ -14,9 +14,26 @@ export default new Vuex.Store({
   mutations: {
     loadData(state, loadConfig){
       Vue.set(state.data, loadConfig.spec.schemaName, loadConfig.data)
+    },
+    upsertInDatabase(state, config){
+      // no-op
     }
   },
   actions: {
+    async addOrUpdate(context, config) {
+      let data = this.getters.data[config.schema.schemaName]
+      let exists = data.findIndex(i => i.uid == config.item.uid)
+
+      console.dir("existing")
+      console.dir(exists)
+      console.dir(data)
+      if(exists != -1)
+        Vue.set(data, exists, config.item)
+      else
+        data.push(config.item)
+
+      this.commit('upsertInDatabase', config)
+    },
     async loadForSpec(context, spec) {
       if (!this.getters.data[spec.schemaName]){
         let data = await getData(spec)

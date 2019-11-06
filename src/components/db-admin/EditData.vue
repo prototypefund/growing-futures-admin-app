@@ -18,6 +18,8 @@
 import InputSingleSelect from '@/components/db-admin/InputSingleSelect.vue'
 import InputMultiSelect from '@/components/db-admin/InputMultiSelect.vue'
 import TextInput from '@/components/db-admin/TextInput.vue'
+import NumberInput from '@/components/db-admin/NumberInput.vue'
+import ReadOnly from '@/components/db-admin/ReadOnly.vue'
 import { getData } from '@/services/data-service.js'
 
 export default {
@@ -26,6 +28,8 @@ export default {
     InputSingleSelect,
     InputMultiSelect,
     TextInput,
+    NumberInput,
+    ReadOnly,
   },
   data() {
     return {
@@ -38,14 +42,8 @@ export default {
   },
   methods: {
     update(p, value){
-      console.dir("UPDATE")
-      console.dir(p)
       this.item[p] = value
-      console.dir(this.item[p])
       this.$emit('update', this.item)
-    },
-    save(){
-      this.$emit('save', this.item)
     },
     getReferencedData(name){
       let schema = this.loadedSchema.properties[name]
@@ -56,6 +54,11 @@ export default {
       return this.loadedSchema.properties[p]
     },
     getComponent(p) {
+      if (this.restrictionProperty(p) == 'read-only')
+      {
+        return 'read-only'
+      }
+
       if (this.hasRef(p)){
         let subschema = this.getSubschema(p)
         if (subschema.xType == 'singleSelect')
@@ -67,21 +70,33 @@ export default {
         }
       } else if (this.getSubschema(p).type == 'string') {
         return "text-input"
+      } else if (this.getSubschema(p).type == 'double') {
+        return "number-input"
       } else if (this.getSubschema(p).type == 'object'){
         return "edit-data"
       }
     },
     getProps(p) {
+      if (this.restrictionProperty(p) == 'read-only')
+      {
+        return {'displayString': this.data[p]}
+      }
+
       if (this.hasRef(p)){
         return {'options': this.getReferencedData(p), 
                 'schema': this.getSubschema(p),
                 'selection': this.data[p]}
-      } else if (this.getSubschema(p).type == 'string')
-      {
+      } else if (this.getSubschema(p).type == 'string') {
+        return {'defaultValue': this.data[p]}
+      } else if (this.getSubschema(p).type == 'double') {
+        console.dir(typeof this.data[p])
         return {'defaultValue': this.data[p]}
       } else if (this.getSubschema(p).type == 'object'){
         return {"schema": {"schema": this.getSubschema(p)}, "data": this.data[p]}
       }
+    },
+    restrictionProperty(p){
+      return this.schema.schema.properties[p].xRestrictions
     },
     hasRef(p){
       let schema = this.getSubschema(p)

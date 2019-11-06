@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     update(e) {
-      console.dir(e)
+      let option = this.options.find(o => o.name == e)
       this.$emit('update', e)
     }
   },
