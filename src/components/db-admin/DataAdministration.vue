@@ -9,7 +9,7 @@
     <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
       <thead>
         <th v-for="attr in attributes" :key="attr">
-            {{ selectedSchema.schema.properties[attr].xDisplay }}
+          {{ selectedSchema.schema.properties[attr].xDisplay }}
         </th>
       </thead>
       <tbody>

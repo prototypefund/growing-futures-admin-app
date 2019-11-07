@@ -8,6 +8,7 @@
         <div class="item" v-for="(item, index) in displayedItems" :key=item.name @click.stop="select(item)">
           <div class="grid-item">
             {{ item.name }}
+            <img v-if="item.image != ''" :src="getImageUrl(item)" alt="">
           </div>
         </div>
         <div v-if="searchTerm != ''" class="grid-item" @click.stop="select(item)">
@@ -62,6 +63,14 @@ export default {
     },
     save(){
       this.back()
+    },
+    getImageUrl(item)
+    {
+      let baseDir = process.env.VUE_APP_SCHEMA_API_ROOT 
+      let slug = item.image
+      console.dir(baseDir)
+      console.dir(slug)
+      return baseDir + slug
     }
   },
   computed: {
@@ -74,8 +83,7 @@ export default {
     displayedItems: function () {
       if (this.searchTerm == ''){
         return this.manuallySelectedItem;
-      } else
-      {
+      } else {
         let searchString = item => 
           { 
             let name = item.name 
@@ -84,7 +92,7 @@ export default {
             console.dir(cat)
             return name
           }
-        return this.items.filter(i =>
+        return this.products.filter(i =>
           searchString(i).toLowerCase().includes(this.searchTerm.toLowerCase()))
       }
     },

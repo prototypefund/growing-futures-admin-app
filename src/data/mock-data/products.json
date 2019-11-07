@@ -303,7 +303,7 @@
             "kuerbis",
             "fruchtgemuese"
         ],
-        "image": "",
+        "image": "/icons/kuerbis.jpg",
         "uid": "product0033",
         "unit": "p"
     },
@@ -313,7 +313,7 @@
             "kuerbis",
             "fruchtgemuese"
         ],
-        "image": "",
+        "image": "/icons/kuerbis.jpg",
         "uid": "product0034",
         "unit": "p"
     },
@@ -323,7 +323,7 @@
             "kuerbis",
             "fruchtgemuese"
         ],
-        "image": "",
+        "image": "/icons/kuerbis.jpg",
         "uid": "product0035",
         "unit": "p"
     },
@@ -504,7 +504,7 @@
         "categories": [
             "zwiebeln"
         ],
-        "image": "",
+        "image": "/icons/zwiebel.jpg",
         "uid": "product0054",
         "unit": "p"
     },
