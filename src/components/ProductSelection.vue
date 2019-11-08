@@ -1,10 +1,10 @@
 <template>
   <div class="product-selection-container modal-overlay" @click="$emit('close')">
     <div class="modal-content">
-      <div class="quick-search">
-        Suchen <input @click.stop @input="searchTerm=$event.target.value" />
+      <div class="quick-search" v-if="!displayAddItem">
+        Suchen <input v-on:click.stop @input="searchTerm=$event.target.value" />
       </div>
-      <div class="grid-container">
+      <div class="grid-container" v-if="!displayAddItem">
         <div class="item" v-for="(item, index) in displayedItems" :key=item.name @click.stop="select(item)">
           <div class="grid-item">
             {{ item.name }}
@@ -20,7 +20,9 @@
 
      <data-modifier v-if="displayAddItem" :data="{name: searchTerm}"
                     :schema="$store.getters.schemas.find(s => s.schemaName='products')"
-                    @click.stop/>
+                    @click.stop
+                    @close="displayAddItem = false"
+                    />
 
      <button v-if="lastSelection" class="button back-button" @click.stop="back()">
        <i class="fa fa-chevron-down" style="margin-left:8px;">zurück</i>

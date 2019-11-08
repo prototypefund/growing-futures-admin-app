@@ -2,7 +2,7 @@
   <div class="data-modifier-container">
     <edit-data @update="update" :schema="schema"
       :data="JSON.parse(JSON.stringify(data))" />
-    <div class="button save-button" @click="save">
+    <div class="button save-button" @click.stop="save">
       Save
     </div>
     <div class="button delete-button" @click="remove">

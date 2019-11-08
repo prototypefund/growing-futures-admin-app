@@ -1,6 +1,6 @@
 <template>
   <div class="text-input">
-      <input class="input" @input="$emit('update', $event.target.value)" v-model="input"/>
+      <input class="input" @click.stop @input="$emit('update', $event.target.value)" v-model="input"/>
   </div>
 </template>
 
