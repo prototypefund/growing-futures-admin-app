@@ -1,5 +1,8 @@
 <template>
   <div class="data-admin-view-container">
+    <div v-if="loading">
+      still loading...
+    </div>
     <div class="view-header" >
       Datentypen
     </div>
@@ -64,8 +67,12 @@ export default {
     schemas () {
       return this.$store.getters.schemas
     },
+    loading () {
+      return !this.$store.getters.data
+    },
     loadedItems () {
-      return this.$store.getters.data[this.selectedSchema.schemaName]
+      if (!this.loading)
+        return this.$store.getters.data[this.selectedSchema.schemaName]
     },
     attributes () { 
       if (!this.selectedSchema)
@@ -79,7 +86,12 @@ export default {
       return []
     },
     schemaOptions() {
-      return this.schemas.map(s => s.schemaName)
+      console.dir("SCHEMAS")
+      console.dir(this.schemas)
+      if (this.schemas) {
+        return this.schemas.map(s => s.schemaName)
+      }
+      return []
     },
     selectedSchema() {
       if (this.selection){

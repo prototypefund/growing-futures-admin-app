@@ -1,8 +1,12 @@
 <template>
   <div class="data-modifier-container">
-    <edit-data @update="update" :schema="schema" :data="data" />
+    <edit-data @update="update" :schema="schema"
+      :data="JSON.parse(JSON.stringify(data))" />
     <div class="button save-button" @click="save">
       Save
+    </div>
+    <div class="button delete-button" @click="remove">
+      Remove
     </div>
   </div>
 </template>
@@ -30,10 +34,22 @@ export default {
     {
       if (!this.item.uid)
       {
-        this.item.uid = this.generateUid(this.schema.xUidPrefix)
+        this.item.uid = this.generateUid(this.schema.schema.xUidPrefix)
       }
       this.$store.dispatch('addOrUpdate', {schema: this.schema, item: this.item} ) 
       this.$emit('close')
+    },
+    remove()
+    {
+      if (!this.item.uid)
+      {
+        this.$emite('close')
+      }
+      else
+      {
+        this.$store.dispatch('remove', {schema: this.schema, item: this.item} ) 
+        this.$emit('close')
+      }
     },
     update(updatedItem) {
       this.item = updatedItem
@@ -56,5 +72,8 @@ export default {
   font-size: 18pt;
 }
 .table-container{
+}
+.delete-button{
+  background-color: red;
 }
 </style>

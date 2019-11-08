@@ -33,7 +33,7 @@ export default {
   },
   data() {
     return {
-      item: JSON.parse(JSON.stringify(this.data))
+      item: this.prepareData(this.data)
     }
   },
   props: {
@@ -41,6 +41,29 @@ export default {
     data: Object,
   },
   methods: {
+    prepareData(data)
+    {
+      if (!data)
+        data = {}
+      Object.keys(this.schema.schema.properties).forEach(k => {
+        let d = data[k]
+        if (!d)
+          data[k] = this.getDefaultValue(this.schema.schema.properties, k)
+        })
+        return data
+    },
+    getDefaultValue(spec, key) {
+      let t = spec[key].type
+      if (t == 'string') {
+        return ""
+      } else if (t == 'array') {
+        return []
+      } else if (t == 'object') {
+        return {}
+      } else if (t == 'double') {
+        return 0
+      }
+    },
     update(p, value){
       this.item[p] = value
       this.$emit('update', this.item)
@@ -89,7 +112,6 @@ export default {
       } else if (this.getSubschema(p).type == 'string') {
         return {'defaultValue': this.data[p]}
       } else if (this.getSubschema(p).type == 'double') {
-        console.dir(typeof this.data[p])
         return {'defaultValue': this.data[p]}
       } else if (this.getSubschema(p).type == 'object'){
         return {"schema": {"schema": this.getSubschema(p)}, "data": this.data[p]}
@@ -106,11 +128,9 @@ export default {
   },
   computed:{
     schemaProperties() {
-      console.dir(this.loadedSchema)
       if ("properties" in this.loadedSchema)
       {
         let properties = Object.keys(this.loadedSchema.properties)
-        console.dir(properties)
         return properties
       }
       return []
