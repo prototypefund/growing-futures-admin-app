@@ -12,25 +12,39 @@
           </div>
         </div>
         <div v-if="searchTerm != ''" class="grid-item" @click.stop="select(item)">
-           <button class="button add-button" @click.stop="displayProductSelection=true">
+           <button class="button add-button" @click.stop="displayAddItem=true">
               <i class="fa fa-plus"></i>
             </button>
         </div>
      </div>
 
-      <button v-if="lastSelection" class="button back-button" @click.stop="back()">
-        <i class="fa fa-chevron-down" style="margin-left:8px;">zurück</i>
-      </button>
+     <data-modifier v-if="displayAddItem" :data="{name: searchTerm}"
+                    :schema="$store.getters.schemas.find(s => s.schemaName='products')"
+                    @click.stop/>
+
+     <button v-if="lastSelection" class="button back-button" @click.stop="back()">
+       <i class="fa fa-chevron-down" style="margin-left:8px;">zurück</i>
+     </button>
+
 
     </div>
+   
   </div>
 </template>
 
 <script>
 import { getData } from '@/services/data-service.js'
+import DataModifier from '@/components/db-admin/DataModifier.vue'
 
 export default {
   name: 'ProductSelection',
+  props: {
+    shareType: Object,
+    shareTypes: Array
+  },
+  components: {
+    DataModifier,
+  },
   data() {
     return {
       searchTerm: '',
@@ -38,6 +52,7 @@ export default {
       manuallySelectedItem: this.$store.getters.data.categories,
       lastSelection: null,
       selecteItem: {},
+      displayAddItem: false,
     }
   },
   methods: {
@@ -97,10 +112,6 @@ export default {
       }
     },
   },
-  props: {
-    shareType: Object,
-    shareTypes: Array
-  }
 }
 </script>
 

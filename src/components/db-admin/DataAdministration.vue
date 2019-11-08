@@ -86,8 +86,6 @@ export default {
       return []
     },
     schemaOptions() {
-      console.dir("SCHEMAS")
-      console.dir(this.schemas)
       if (this.schemas) {
         return this.schemas.map(s => s.schemaName)
       }

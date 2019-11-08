@@ -131,6 +131,21 @@ export default {
       if ("properties" in this.loadedSchema)
       {
         let properties = Object.keys(this.loadedSchema.properties)
+        console.dir(properties)
+        properties.sort((a,b) => {
+          let num1 = this.loadedSchema.properties[a].xOrder 
+          let num2 = this.loadedSchema.properties[b].xOrder
+          if (!num1)
+            num1 = 999
+          if (!num2)
+            num2 = 999
+          let val = num1 - num2
+          console.log(a)
+          console.log(b)
+          console.log(val)
+          return  val
+        })
+        console.dir(properties)
         return properties
       }
       return []

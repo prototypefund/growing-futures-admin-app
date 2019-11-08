@@ -51,7 +51,6 @@ export default new Vuex.Store({
       this.commit('upsertInDatabase', config)
     },
     async loadForSpec(context, spec) {
-      console.dir("starting to load")
       if (!this.getters.data[spec.schemaName]){
         let data = await getData(spec)
         this.commit('loadData', {spec: spec, data: data} )
@@ -78,8 +77,6 @@ export default new Vuex.Store({
     },
     categories: (state, getters) => {
       let stuff = getters.data.categories
-      console.dir("GETTER")
-      console.dir(stuff)
       return stuff
     }
 

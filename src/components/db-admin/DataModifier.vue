@@ -43,7 +43,7 @@ export default {
     {
       if (!this.item.uid)
       {
-        this.$emite('close')
+        this.$emit('close')
       }
       else
       {

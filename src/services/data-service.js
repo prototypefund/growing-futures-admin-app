@@ -1,7 +1,6 @@
 export function buildBody(requestConfig) {
   let schemaName = requestConfig.schema.schemaName
   let item = requestConfig.item
-  console.dir(item, schemaName)
   return {"data": item, "schemaName": schemaName}
 }
 export async function getData(spec){
@@ -15,7 +14,6 @@ export async function getData(spec){
 }
 
 export async function postJson(url, body){
-  console.dir(body)
   try {
     let response = await fetch(url, {headers: { "Accept": "application/json" },
       method: 'post',
@@ -38,7 +36,6 @@ export async function postJson(url, body){
 }
 
 export async function fetchJson(url){
-  console.dir("loading")
   let response = await fetch(url, {headers: { "Accept": "application/json" },
                                    credentials: 'omit', 
                                    mode: 'cors'})

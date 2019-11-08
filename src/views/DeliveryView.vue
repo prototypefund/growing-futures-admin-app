@@ -140,9 +140,7 @@ export default {
     },
     productConfiguration(product) {
       this.displayProductConfiguration = true
-      console.log(product)
       this.selectedProduct = this.products.find(p => p.name == product)
-      console.log(this.selectedProduct)
     },
     handleDoneProductConfiguration(r) {
       this.displayProductConfiguration = false
