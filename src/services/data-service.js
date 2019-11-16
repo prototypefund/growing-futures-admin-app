@@ -1,3 +1,5 @@
+import axios from "axios"
+
 export function buildBody(requestConfig) {
   let schemaName = requestConfig.schema.schemaName
   let item = requestConfig.item
@@ -11,6 +13,11 @@ export async function getData(spec){
     return await postJson(url, body) 
     }
   return []
+}
+
+export function getShares() {
+  //return axios.get("http://172.16.3.99:8000/csa/demo")
+  return fetchJson("http://172.16.3.99:8000/csa/demo")
 }
 
 export async function postJson(url, body){

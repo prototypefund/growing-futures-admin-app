@@ -52,10 +52,10 @@
           @selected="addToSelection"/>
 
         <div class="harvest-header">Ausgabeplan</div>
-          <div class="share-type" v-for="shareType in shareTypes" :key="shareType.type">
+          <div class="share-type" v-for="shareType in shareTypes" :key="shareType.name">
             <div class="share" v-if="Array.isArray(products) && products.length">
               {{ shareType.name }} ({{ shareType.shares }} Mal)
-              <share-list :products="products" :type=shareType.type
+              <share-list :products="products" :type=shareType.name
                 @selected="productConfiguration"/>
             </div>
           </div>
@@ -70,9 +70,6 @@
           @close="displayProductConfiguration = false"
           @done="handleDoneProductConfiguration"
           @remove="removeFromProducts"/>
-
-
-
   </div>
 </template>
 
@@ -82,6 +79,7 @@ import ShareList from '@/components/ShareList.vue'
 import ProductSelection from '@/components/ProductSelection.vue'
 
 import { display } from '@/mixins/display.js'
+import { getShareTypes, getShares } from '@/services/data-service.js'
 
 export default {
   name: 'Delivery',
@@ -91,21 +89,13 @@ export default {
     ProductSelection,
     ProductConfiguration,
   },
+  async mounted() {
+    this.retrievedShares = await getShares()
+  },
   data() {
     return {
+      retrievedShares: null,
       days: ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"],
-      shareTypes: [{
-                    type: "big",
-                    name: "Großer Anteil",
-                    factor: 1,
-                    shares: 46
-                    },
-                    {
-                    type: "small",
-                    name: "Kleiner Anteil",
-                    factor: 0.5 ,
-                    shares: 38
-                    }],
       nextDelivery: new Date("2019-10-04"),
 
       products: [],
@@ -184,8 +174,28 @@ export default {
       let idx = this.products.findIndex(p => p.name == productName)
       this.products.pop(idx)
     }
+  },
+  computed: {
+    shareTypes() {
+      if (this.retrievedShares != null)
+      {
+        let shares = this.retrievedShares.nextDelivery.reduce((prev, curr) =>
+          {
+            let share = prev[curr.shareType] || {shares: 0,
+                                                 name: curr.shareType,
+                                                 type: curr.shareType,
+                                                 factor: curr.sizeFactor}
+            share.shares++
+            prev[curr.shareType] = share
+            return prev
+          }, {})
+        return Object.values(shares)
+      }
+      return []
+    }
   }
 }
+
 </script>
 
 <style lang="scss" scoped>

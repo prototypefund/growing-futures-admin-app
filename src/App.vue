@@ -8,8 +8,6 @@
 import { fetchJson } from '@/services/data-service.js'
 export default {
   name: 'App',
-  components: {
-  },
   async created() {
     let url = process.env.VUE_APP_SCHEMA_API_ROOT +
       process.env.VUE_APP_SCHEMA_URL
