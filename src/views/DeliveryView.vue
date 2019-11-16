@@ -79,7 +79,7 @@ import ShareList from '@/components/ShareList.vue'
 import ProductSelection from '@/components/ProductSelection.vue'
 
 import { display } from '@/mixins/display.js'
-import { getShareTypes, getShares } from '@/services/data-service.js'
+import { postShareTypes, getShares } from '@/services/data-service.js'
 
 export default {
   name: 'Delivery',
@@ -157,16 +157,18 @@ export default {
     done() {
       let splits = []
       this.shareTypes.forEach(item =>
-        splits.push({"name": item.name, "type": item.type, "contents": []}))
+        splits.push({"shareType": item.type, "contents": []}))
       this.products.forEach(product => this.addToSplits(splits, product))
 
       this.mySplits.length = 0
       splits.forEach(s => this.mySplits.push(s))
+
+      postShareTypes({ nextDelivery: this.mySplits})
     },
     addToSplits(splits, product) {
       splits.forEach(s => s.contents.push({"name": product.name,
         "unit": product.unit,
-        "amount": product.planned[s.type],
+        "amount": product.planned[s.shareType],
         "note": "some note or not"}))
     },
     removeFromProducts(productName){

@@ -16,8 +16,11 @@ export async function getData(spec){
 }
 
 export function getShares() {
-  //return axios.get("http://172.16.3.99:8000/csa/demo")
   return fetchJson("http://172.16.3.99:8000/csa/demo")
+}
+
+export function postShareTypes(body) {
+  postJson("http://172.16.3.99:8000/csa/demo2", body) 
 }
 
 export async function postJson(url, body){
