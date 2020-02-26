@@ -1,0 +1,30 @@
+[
+    {
+        "name": "John Doe",
+        "depot": "Krummennaab",
+        "shareType": "small",
+        "uid": "user0001",
+        "username": "johndoe"
+    },
+    {
+        "name": "Alex Awesome",
+        "depot": "Weiden",
+        "shareType": "big",
+        "uid": "user0002",
+        "username": "aa"
+    },
+    {
+        "name": "Udo Oinki",
+        "depot": "Krummennaab",
+        "shareType": "big",
+        "uid": "user0003",
+        "username": "jens"
+    },
+    {
+        "name": "Da Boris",
+        "depot": "Weiden",
+        "shareType": "small",
+        "uid": "user0004",
+        "username": "boris"
+    }
+]

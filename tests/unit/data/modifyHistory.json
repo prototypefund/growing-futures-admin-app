@@ -1,0 +1,71 @@
+{
+    "items": [
+        {
+            "amount": 120,
+            "date": "2019-12-06T09:26:25.811Z",
+            "displayString": "Eichblattsalat",
+            "product": "product0002",
+            "type": "harvest",
+            "uid": "inventory-entry-4452557a-cbf7-461f-bc27-4f18b9bb15f2",
+            "unit": "p",
+            "user": "John Doe"
+        },
+        {
+            "amount": 80,
+            "date": "2019-12-06T09:26:36.002Z",
+            "displayString": "Eichblattsalat",
+            "product": "product0002",
+            "type": "harvest",
+            "uid": "inventory-entry-79cefcd6-7b61-4465-9152-904890fd85a0",
+            "unit": "p",
+            "user": "John Doe"
+        },
+        {
+            "amount": 120,
+            "date": "2019-12-06T09:26:43.032Z",
+            "displayString": "Eichblattsalat",
+            "product": "product0002",
+            "type": "harvest",
+            "uid": "inventory-entry-1ba2aa1a-8dbb-4328-a748-0c8e929e7511",
+            "unit": "w",
+            "user": "John Doe"
+        },
+        {
+            "amount": 17,
+            "date": "2019-12-06T11:30:09.035Z",
+            "displayString": "Eichblattsalat",
+            "product": "product0002",
+            "type": "harvest",
+            "uid": "inventory-entry-df237d6e-7953-41b9-97ed-bf948423e775",
+            "unit": "b",
+            "user": "Alois"
+        },
+        {
+            "amount": 10,
+            "date": "2019-12-06T13:21:16.705Z",
+            "displayString": "Eichblattsalat",
+            "product": "product0002",
+            "type": "harvest",
+            "uid": "inventory-entry-d98a4109-fa9f-4540-a87b-f23c069cae9a",
+            "unit": "p",
+            "user": "John Doe"
+        }
+    ],
+    "key": "product0002",
+    "pivot": {
+        "value": [
+            {
+                "unit": "p",
+                "value": 210
+            },
+            {
+                "unit": "w",
+                "value": 120
+            },
+            {
+                "unit": "b",
+                "value": 17
+            }
+        ]
+    }
+}

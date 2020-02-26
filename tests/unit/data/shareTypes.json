@@ -1,0 +1,20 @@
+[
+    {
+        "factor": 1,
+        "name": "Großer Anteil",
+        "type": "big",
+        "uid": "shareType0001"
+    },
+    {
+        "factor": 0.5,
+        "name": "Kleiner Anteil",
+        "type": "small",
+        "uid": "shareType0002"
+    },
+    {
+        "factor": 1.5,
+        "name": "Huge Share",
+        "type": "huge",
+        "uid": "shareType0003"
+    }
+]

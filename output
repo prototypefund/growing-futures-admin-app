@@ -1,0 +1,4 @@
+
+> growf-admin-app@0.1.0 test:unit /home/pekoson/arbeit/software/mission-five/growf/growf-admin-app
+> vue-cli-service test:unit
+

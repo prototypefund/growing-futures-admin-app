@@ -1,0 +1,110 @@
+[
+    {
+        "amount": 13,
+        "date": "2019-12-04T12:33:00.000Z",
+        "product": "product0012",
+        "type": "harvest",
+        "uid": "inventory-entry-1a7dba9c-e9bc-4937-8227-653a586c201c",
+        "unit": "w",
+        "user": "John Doe"
+    },
+    {
+        "amount": 120,
+        "date": "2019-12-06T09:26:25.811Z",
+        "product": "product0002",
+        "type": "harvest",
+        "uid": "inventory-entry-4452557a-cbf7-461f-bc27-4f18b9bb15f2",
+        "unit": "p",
+        "user": "John Doe"
+    },
+    {
+        "amount": 80,
+        "date": "2019-12-06T09:26:36.002Z",
+        "product": "product0002",
+        "type": "harvest",
+        "uid": "inventory-entry-79cefcd6-7b61-4465-9152-904890fd85a0",
+        "unit": "p",
+        "user": "John Doe"
+    },
+    {
+        "amount": 120,
+        "date": "2019-12-06T09:26:43.032Z",
+        "product": "product0002",
+        "type": "harvest",
+        "uid": "inventory-entry-1ba2aa1a-8dbb-4328-a748-0c8e929e7511",
+        "unit": "w",
+        "user": "John Doe"
+    },
+    {
+        "amount": 17,
+        "date": "2019-12-06T11:30:09.035Z",
+        "product": "product0002",
+        "type": "harvest",
+        "uid": "inventory-entry-df237d6e-7953-41b9-97ed-bf948423e775",
+        "unit": "b",
+        "user": "Alois"
+    },
+    {
+        "amount": 120,
+        "date": "2019-12-06T12:31:06.121Z",
+        "product": "product0034",
+        "type": "harvest",
+        "uid": "inventory-entry-5f599c46-9cdd-470e-a4be-c4f8a0387cff",
+        "unit": "p",
+        "user": "John Doe"
+    },
+    {
+        "amount": 120,
+        "date": "2019-12-06T13:17:35.734Z",
+        "product": "product0012",
+        "type": "harvest",
+        "uid": "inventory-entry-24b71ae5-8f99-43c6-8497-0d8fefe95c79",
+        "unit": "p",
+        "user": "John Doe"
+    },
+    {
+        "amount": 120,
+        "date": "2019-12-06T13:20:38.153Z",
+        "product": "product0012",
+        "type": "harvest",
+        "uid": "inventory-entry-106d3e03-813d-46ea-bad8-a3b67be56508",
+        "unit": "w",
+        "user": "John Doe"
+    },
+    {
+        "amount": 10,
+        "date": "2019-12-06T13:21:16.705Z",
+        "product": "product0002",
+        "type": "harvest",
+        "uid": "inventory-entry-d98a4109-fa9f-4540-a87b-f23c069cae9a",
+        "unit": "p",
+        "user": "John Doe"
+    },
+    {
+        "amount": 10,
+        "date": "2019-12-06T13:22:52.765Z",
+        "product": "product0012",
+        "type": "harvest",
+        "uid": "inventory-entry-8c182a84-968e-48be-8664-d061b870f6d0",
+        "unit": "p",
+        "user": "John Doe"
+    },
+    {
+        "amount": 12,
+        "date": "2019-12-18T12:33:00.000Z",
+        "product": "product0015",
+        "type": "harvest",
+        "uid": "inventory-entry-bda80aa2-c135-4d2b-8ad2-f5ed1ef91d3f",
+        "unit": "w",
+        "user": "John Doe"
+    },
+    {
+        "amount": 38,
+        "date": "2019-12-18T12:52:00.000Z",
+        "product": "product0055",
+        "type": "harvest",
+        "uid": "inventory-entry-8292d028-fd4e-4bae-91d7-9083443ffe32",
+        "unit": "w",
+        "user": "John Doe"
+    }
+]

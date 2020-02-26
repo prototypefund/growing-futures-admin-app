@@ -1,0 +1,84 @@
+{
+    "date": "2019-11-19T14:19:32.842Z",
+    "name": "Gemüse fürn Gerd",
+    "products": [
+        {
+            "buffer": 0,
+            "planned": {
+                "shareType0001": 1,
+                "shareType0002": 2
+            },
+            "note": {
+                "shareType0001": "viel nehmen",
+                "shareType0002": "some note" 
+            },
+            "uid": "product0047",
+            "unit": "p"
+        },
+        {
+            "buffer": 0,
+            "planned": {
+                "shareType0001": 3,
+                "shareType0002": 2
+            },
+            "uid": "product0033",
+            "unit": "p"
+        },
+        {
+            "buffer": 5,
+            "planned": {
+                "shareType0001": 2,
+                "shareType0002": 1
+            },
+            "uid": "product0034",
+            "unit": "w"
+        },
+        {
+            "planned": {
+                "shareType0001": 5,
+                "shareType0002": 2
+            },
+            "uid": "product0054",
+            "unit": "b"
+        }
+    ],
+    "status": "configured",
+    "uid": "delivery-103a2ece-8c59-45e4-91b8-03245cc08b54",
+    "users": [
+        {
+            "depot": "depot0001",
+            "name": "Alex Awesome",
+            "shareType": "shareType0001",
+            "uid": "user0002",
+            "username": "aa"
+        },
+        {
+            "depot": "depot0001",
+            "name": "John Doe",
+            "shareType": "shareType0001",
+            "uid": "user0001",
+            "username": "johndoe"
+        },
+        {
+            "depot": "depot0001",
+            "name": "Udo Oinki",
+            "shareType": "shareType0002",
+            "uid": "user0003",
+            "username": "jens"
+        },
+        {
+            "depot": "depot0002",
+            "name": "Da Boris",
+            "shareType": "shareType0001",
+            "uid": "user0004",
+            "username": "boris"
+        },
+        {
+            "depot": "depot0002",
+            "name": "asd",
+            "shareType": "shareType0002",
+            "uid": "undefined-92eb6c4c-4ec3-4f68-a084-edf9911a65e0",
+            "username": "asd"
+        }
+    ]
+}

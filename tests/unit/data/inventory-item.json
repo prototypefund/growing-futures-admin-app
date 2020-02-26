@@ -1,0 +1,33 @@
+ inventoryItem: { 'uid': 'unique',
+                       'name': 'Zwiebel',
+                       'harvestedTotal': 128,
+                       'plannedTotal': 100,
+                       'unit': 'g',
+                       'history': [
+                          { 
+                            'uid': 'user0', 
+                            'date': new Date().valueOf(), 
+                            'amount': 50,
+                            'type': 'harvest'
+                          }, 
+                          { 
+                            'uid': 'user0', 
+                            'date': new Date().valueOf(), 
+                            'amount': 33,
+                            'type': 'harvest'
+                          }, 
+                          {
+                            'uid': 'user1', 
+                            'date': new Date().valueOf(), 
+                            'amount': -33,
+                            'type': 'delivery'
+                          },
+                          {
+                            'uid': 'user2', 
+                            'date': new Date().valueOf(), 
+                            'amount': -12,
+                            'type': 'reconcilation'
+                          }
+                        ]
+                      },
+

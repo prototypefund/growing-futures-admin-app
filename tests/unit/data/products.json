@@ -1,0 +1,29 @@
+[
+    {
+        "categories": [
+            "salat"
+        ],
+        "image": "/path/to/image",
+        "name": "Eichblattsalat",
+        "uid": "product0001",
+        "unit": "p"
+    },
+    {
+        "categories": [
+            "wurzelgemuese"
+        ],
+        "image": "",
+        "name": "Meerrettich",
+        "uid": "product0002",
+        "unit": "g"
+    },
+    {
+        "categories": [
+            "salat"
+        ],
+        "image": "",
+        "name": "Chinesische Keule",
+        "uid": "product0003",
+        "unit": "g"
+    }
+]

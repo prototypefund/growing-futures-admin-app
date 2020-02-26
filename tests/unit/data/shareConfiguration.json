@@ -1,0 +1,37 @@
+[
+    {
+        "buffer": 0,
+        "planned": {
+            "shareType0001": 1,
+            "shareType0002": 2
+        },
+        "uid": "product0047",
+        "unit": "p"
+    },
+    {
+        "buffer": 0,
+        "planned": {
+            "shareType0001": 1,
+            "shareType0002": 2
+        },
+        "uid": "product0033",
+        "unit": "p"
+    },
+    {
+        "buffer": 5,
+        "planned": {
+            "shareType0001": 2,
+            "shareType0002": 1
+        },
+        "uid": "product0034",
+        "unit": "p"
+    },
+    {
+        "planned": {
+            "shareType0001": 1,
+            "shareType0002": 2
+        },
+        "uid": "product0054",
+        "unit": "p"
+    }
+]

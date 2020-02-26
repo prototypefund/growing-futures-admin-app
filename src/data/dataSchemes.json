@@ -1,0 +1,27 @@
+[
+    {
+        "schemaName": "products",
+        "schemaUrl": "/schemas/productSchema.json",
+        "baseUrl": "someUrl"
+    },
+    {
+        "schemaName": "users",
+        "schemaUrl": "/schemas/userSchema.json",
+        "baseUrl": "someUrl"
+    },
+    {
+        "schemaName": "shareTypes",
+        "schemaUrl": "/schemas/shareTypeSchema.json",
+        "baseUrl": "someUrl"
+    },
+    {
+        "schemaName": "depots",
+        "schemaUrl": "/schemas/depotSchema.json",
+        "baseUrl": "someUrl"
+    },
+    {
+        "schemaName": "categories",
+        "schemaUrl": "/schemas/categoriesSchema.json",
+        "baseUrl": "someUrl"
+    }
+]
